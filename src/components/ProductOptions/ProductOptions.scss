@@ -1,0 +1,40 @@
+.options_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+
+  input {
+    display: none;
+
+    &:checked + span {
+        background-color: #ff7010;
+        color: white;
+    }
+  }
+
+  label {
+    span {
+      display: block;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      padding: 13px 13px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      transition-duration: 0.3s;
+      user-select: none;
+      border-radius: 6px
+    }
+  }
+}
+
+.options_item {
+  width: 100%;
+  white-space: nowrap;
+  background-color: #fff;
+}

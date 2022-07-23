@@ -1,0 +1,63 @@
+.slider_item {
+  background-color: #fff;
+  // min-width: 190px;
+  background-color: #fff;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .button {
+    padding: 10px 56px;
+
+    @media (max-width: 768px) {
+      padding: 6px 15px;
+      background-color: #ff701030;
+      color: #ff7010;
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    padding: 10px;
+    flex-shrink: 0;
+  }
+}
+
+.slider_item_img {
+  width: 192px;
+  height: 192px;
+  margin-bottom: 16px;
+  user-select: none;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+}
+
+.slider_item_info {
+  padding: 16px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    text-align: start;
+  }
+}
+
+.slider_item_title {
+  margin-bottom: 8px;
+}
+
+.slider_item_descr {
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

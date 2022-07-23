@@ -1,0 +1,22 @@
+.time_range {
+  position: absolute;
+  background-color: #fff;
+  z-index: 1;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.time_range_item {
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: #fff, $amount: 8)
+  }
+}
+
+.time_selected {
+  background-color: #444;
+}

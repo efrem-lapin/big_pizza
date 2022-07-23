@@ -1,0 +1,16 @@
+.form_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 60px;
+}
+
+button:disabled {
+  background-color: #c2c2c2;
+  border: none;
+  cursor: default;
+
+  &:hover {
+    background-color: #c2c2c2;
+  }
+}

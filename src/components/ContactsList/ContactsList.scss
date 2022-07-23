@@ -1,0 +1,41 @@
+.contacts_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    transition-duration: 0.3s;
+  }
+
+  a:hover {
+    color: #ff7010;
+  }
+
+  li {
+    display: flex;
+    cursor: pointer;
+
+    span {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 20;
+  }
+}
+
+.contacts_list_title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 22px;
+}

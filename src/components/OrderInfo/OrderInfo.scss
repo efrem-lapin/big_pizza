@@ -1,0 +1,40 @@
+.order_info_title,
+.order_info_more {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #a5a5a5;
+}
+
+.order_info {
+  &:not(:last-child) {
+    margin-right: 82px;
+
+    @media (max-width: 768px) {
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 12px;
+    margin-right: 0;
+  }
+}
+
+.order_info_title {
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.order_info_descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-right: 8px;
+}
+
+.order_info_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

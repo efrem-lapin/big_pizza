@@ -1,0 +1,30 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.location_city_wrapper {
+  position: relative;
+}
+
+.location_city {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    span {
+      transition-duration: 0.3s;
+      color: $primary;
+    }
+
+    &:active {
+      span {
+        color: $black;
+      }
+    }
+  }
+}
+
+.location_city_title {
+  margin-right: 8px;
+}

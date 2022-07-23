@@ -1,0 +1,21 @@
+.menu_burger {
+    span {
+      transition-duration: 0.3s;
+    }
+  }
+
+.burger_active {
+  span {
+    &:last-child {
+      display: none;
+    }
+
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+  }
+}

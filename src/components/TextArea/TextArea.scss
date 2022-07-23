@@ -1,0 +1,29 @@
+@import "../../scss/desctop.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+
+.textarea_wrapper {
+  padding: 20px 0;
+  border-bottom: 1px solid $gray-line;
+}
+
+.textarea_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.textarea_box {
+  width: 100%;
+  height: 200px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  outline: none;
+  padding: 13px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  resize: none;
+}

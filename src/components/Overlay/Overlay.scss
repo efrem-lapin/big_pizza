@@ -1,0 +1,39 @@
+.overlay {
+  z-index: 11;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: #00000050;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  animation: blur_overlay 0.5s linear;
+
+  @media (max-width: 886px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+@keyframes blur_overlay {
+  from {
+    backdrop-filter: blur(0);
+    background-color: #00000000;
+  }
+
+  to {
+    backdrop-filter: blur(5px);
+    background-color: #00000050;
+  }
+}

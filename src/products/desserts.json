@@ -1,0 +1,37 @@
+[
+    {
+        "id_dessert": "dessert1",
+        "img": "img/products/desserts/dessert1.jpg",
+        "name": "Филадельфия крем-брюле",
+        "descr": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
+        "price": 395,
+        "label": "Хит"
+    },
+
+    {
+        "id_dessert": "dessert2",
+        "img": "img/products/desserts/dessert1.jpg",
+        "name": "Филадельфия крем-брюле",
+        "descr": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
+        "price": 395,
+        "label": null
+    },
+
+    {
+        "id_dessert": "dessert3",
+        "img": "img/products/desserts/dessert1.jpg",
+        "name": "Филадельфия крем-брюле",
+        "descr": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
+        "price": 395,
+        "label": "Хит"
+    },
+
+    {
+        "id_dessert": "dessert4",
+        "img": "img/products/desserts/dessert1.jpg",
+        "name": "Филадельфия крем-брюле",
+        "descr": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
+        "price": 395,
+        "label": null
+    }
+]

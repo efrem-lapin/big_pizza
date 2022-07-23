@@ -1,0 +1,40 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.header_lower {
+  @extend %display-flex-center;
+  justify-content: space-between;
+  padding: 12px 0;
+  top: 40px;
+  position: sticky;
+  top: 10px;
+}
+
+.menu_burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6px 0;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.burger_line {
+  width: 32px;
+  height: 1.8px;
+  background-color: #191919;
+  border-radius: 1px;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &:last-child {
+    width: 20px;
+  }
+}

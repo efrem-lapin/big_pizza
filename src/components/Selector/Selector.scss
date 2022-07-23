@@ -1,0 +1,42 @@
+.selector {
+  position: relative;
+}
+
+.selector_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+
+  span {
+    color: gray;
+  }
+
+  input {
+    display: none;
+  }
+
+  .icon {
+    padding: 0 0 0 13px;
+
+    svg {
+      path {
+        fill: gray;
+      }
+    }
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  width: 100%;
+  cursor: pointer;
+
+  &::before {
+    content: "Дата";
+    display: block;
+  }
+}

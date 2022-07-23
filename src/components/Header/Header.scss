@@ -1,0 +1,24 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.header {
+  z-index: 5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: $white;
+  transition-duration: 0.3s;
+  box-shadow: 0px 8px 8px -13px rgba(34, 60, 80, 0.2);
+
+  @media (max-width: 1440px) {
+    
+  }
+}
+
+.header_hr {
+  color: $gray-line;
+  background-color: $gray-line;
+  border: none;
+  height: 1px;
+}

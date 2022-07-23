@@ -1,0 +1,171 @@
+.overlay {
+  z-index: 11;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: #00000050;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  animation: bluram 0.5s linear;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px 20px 12px 20px;
+  width: 420px;
+  height: 100vh;
+  background-color: white;
+  
+  @media (max-width: 1440px) {
+    width: 350px;
+  }
+
+  @media (max-width: 768px) {
+    width: 60vw;
+  }
+
+  @media (max-width: 580px) {
+    width: 80vw;
+  }
+
+  @media (max-width: 425px) {
+    width: 100vw;
+  }
+}
+
+.drawer_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  margin-bottom: 20px;
+
+  @media (max-width: 425px) {
+    font-size: 18px;
+  }
+}
+
+.drawer_close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  path {
+    fill: gray;
+  }
+
+  .icon {
+    padding: 0;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 18px;
+  }
+}
+
+.drawer_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: auto;
+  overflow-x: hidden;
+  margin-bottom: 24px;
+  width: 100%;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.drawer_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.drawer_button {
+  padding: 13px 58px;
+  border-radius: 6px;
+  border: 1px solid #ff7010;
+  color: #ff7010;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: darken(#fff, 4);
+  }
+}
+
+.button_cart {
+  padding: 13px 30px;
+
+  @media (max-width: 425px) {
+    padding: 12px 14px;
+    font-weight: 500;
+  }
+}
+
+.drawer_cart_sum {
+  color: #ff7010;
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+
+  @media (max-width: 425px) {
+    font-size: 16px
+  }
+}
+
+.done {
+  background-color: #ff7010;
+  color: #fff;
+
+  &:hover {
+    background-color: darken(#ff7010, 4);
+  }
+}
+
+.active {
+  animation: active 0.5s ease;
+}
+
+.deactive {
+  animation: deactive 0.5s ease;
+  transform: translateX(+500px);
+}
+
+@keyframes active {
+  from {
+    transform: translateX(+500px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes deactive {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(+500px);
+  }
+}

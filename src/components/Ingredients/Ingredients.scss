@@ -1,0 +1,151 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.ingredients {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.ingredient_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 105px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 8px;
+
+  .ingredient_icon {
+    path {
+      fill: #f0f0f0;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 4px;
+  }
+}
+
+.btn_ingredient {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+
+  @media (max-width: 1024px) {
+    top: 4px;
+    right: -4px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.ingredient {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+
+    @media (max-width: 1024px) {
+      margin-right: 5px;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + .ingredient_box {
+    border: 1px solid #ff7010;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #ff7010;
+      border-radius: 50%;
+
+      @media (max-width: 1024px) {
+        width: 10px;
+        height: 10px;
+        top: 4px;
+        right: 4px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      right: 12px;
+      display: block;
+      width: 8px;
+      height: 6px;
+      border-left: 1px solid #ff7010;
+      border-bottom: 1px solid #ff7010;
+      transform: rotate(-45deg);
+
+      @media (max-width: 1024px) {
+        width: 5px;
+        height: 4px;
+        top: 6px;
+        right: 6.5px;
+      }
+    }
+
+    .ingredient_icon {
+      path {
+        fill: #ff7010;
+      }
+    }
+
+    .btn_ingredient {
+      display: none;
+    }
+  }
+}
+
+.ingredient_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.ingredient_name {
+  text-align: center;
+
+  @media (max-width: 1440px) {
+    font-size: 12px;
+  }
+}
+
+.ingredient_price {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ff7010;
+}

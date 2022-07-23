@@ -1,0 +1,134 @@
+.order_history_item {
+  padding: 16px 20px 20px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.upper_wrapper{
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.upper_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.rect {
+  width: 4px;
+  height: 44px;
+  background-color: #e23535;
+  border-radius: 24px;
+  margin-right: 16px;
+
+  @media (max-width: 768px) {
+    height: 220px;
+    margin-right: 10px;
+  }
+}
+
+.icon_arrow {
+  width: 16px;
+  height: 9px;
+  transition-duration: 0.3s;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 32px;
+    height: 24px;
+    padding: 4px;
+  }
+
+  .icon {
+    padding: 0;
+  }
+
+  svg {
+    width: 16px;
+    height: 9px;
+
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 24px;
+    }
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 24px;
+    }
+
+    path {
+      fill: #ff7010;
+    }
+  }
+}
+
+.down_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.history_pizza_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: -10px;
+}
+
+.history_pizza_img {
+  width: 38px;
+  height: 38px;
+}
+
+.hr {
+  margin: 16px 0px 12px;
+  border: 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.order_history_pizza {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.drop_repeat {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ff7010;
+  cursor: pointer;
+}
+
+.arrow_rotate {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,29 @@
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+@import "../../scss/desctop.scss";
+
+.posters_list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    // gap: 10px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+.container_posters {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

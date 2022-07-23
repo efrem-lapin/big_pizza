@@ -1,0 +1,98 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.drop_list_wrapper {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px 2px 8px rgba(25, 25, 25, 0.1);
+  background-color: #fff;
+  z-index: 10;
+  padding: 10px 0px;
+  width: 250px;
+}
+
+.drop_list {
+  position: relative;
+  padding: 20px;
+  background-color: $white;
+  border-radius: 12px;
+
+  a {
+    display: block;
+    @extend %desc-normal;
+    cursor: pointer;
+
+    li {
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      li {
+        color: $primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: $white;
+    transform: rotate(45deg);
+  }
+}
+
+.drop_list_item {
+  cursor: pointer;
+  transition-duration: 0.3s;
+  padding: 4px 20px;
+
+  a {
+    color: #000;
+    transition-duration: 0.3s;
+  }
+
+  &:hover {
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.active_drop {
+  animation: open 0.5s ease;
+}
+
+.deactive_drop {
+  animation: close 0.5s ease;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

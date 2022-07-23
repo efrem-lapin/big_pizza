@@ -1,0 +1,83 @@
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+@import "../../scss/desctop.scss";
+
+.check_location {
+  @extend %display-flex-center;
+  padding: 15px 32px;
+  background: $white;
+  border: 1px solid $gray-line;
+  border-radius: 8px;
+  margin-bottom: 30px;
+
+  span {
+    @extend %desc-big-text;
+    margin-right: 32px;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 425px) {
+      // font-size: 14px;
+    }
+  }
+
+  .button {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 24px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 425px) {
+    padding: 5px 20px 20px;
+    flex-direction: column;
+  }
+}
+
+.check_location_box {
+  display: flex;
+  flex: 1;
+  padding: 13px 12px;
+  border: 1px solid $gray-line;
+  border-radius: 6px;
+  margin-right: 20px;
+
+  input {
+    @extend %desc-normal;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0px 0px 0px 12px;
+    margin-right: 0;
+  }
+}
+
+.location_btn {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .button {
+    @media (max-width: 768px) {
+      display: flex;
+      padding: 12px;
+
+      .icon {
+        transform: translateX(+5px);
+      }
+    }
+  }
+}

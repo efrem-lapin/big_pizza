@@ -1,0 +1,104 @@
+@import "../../scss/desctop.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+
+/* BUTTON */
+.button {
+  @extend %desc-normal;
+  outline: none;
+  border: none;
+  padding: 13px 32px;
+  background-color: $primary;
+  color: $white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary, 6);
+  }
+
+  &:active {
+    background-color: lighten($primary, 6);
+  }
+}
+
+/* ICON */
+.icon {
+  @extend %display-flex-center;
+  padding-right: 8px;
+}
+
+/* INPUT LABEL */
+.input_label {
+  width: 100%;
+}
+
+.input_panel {
+  padding: 13px 16px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.input_title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #a5a5a5;
+  margin-bottom: 8px;
+}
+
+/* CHECKBOX */
+
+.checkbox {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+  }
+
+  input {
+    display: none;
+
+    &:checked + span::after {
+      position: absolute;
+      top: 3px;
+      left: 9px;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      transform: rotate(-45deg) translate(-50%, -50%);
+      transition-duration: 0.3s;
+    }
+
+    &:checked + span::before {
+      background-color: $primary;
+    }
+  }
+
+  span::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid $primary;
+    margin-right: 8px;
+    transition-duration: 0.3s;
+  }
+}

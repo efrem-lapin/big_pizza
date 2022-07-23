@@ -1,0 +1,45 @@
+.menu_mobile {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    height: calc(100vh - 56px);
+    width: 100vw;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 10;
+    border-top: 1px solid #00000010;
+}
+
+.menu_mobile_active {
+    display: block;
+    animation: menu_mobile_active 0.3s linear;
+}
+
+.menu_mobile_deactive {
+    animation: menu_mobile_deactive 0.3s linear;
+}
+
+.d-none {
+    display: none;
+}
+
+@keyframes menu_mobile_active {
+
+    from {
+        transform: translateX(+110vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes menu_mobile_deactive {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(+110vw);
+    }
+}

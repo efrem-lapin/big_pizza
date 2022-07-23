@@ -1,0 +1,87 @@
+.account_setting {
+  animation: show 0.3s ease;
+}
+
+.account_data {
+  padding: 24px 32px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 378px;
+  }
+}
+
+.account_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.account_data_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    &:not(:last-child) {
+      margin-right: 24px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 12px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.change_data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 16px 0px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  label {
+    margin: 0;
+  }
+}
+
+.password {
+  .account_head {
+    margin-bottom: 0;
+  }
+}
+
+.account_change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ff7010;
+  user-select: none;
+  cursor: pointer;
+}
+
+.account_setting_btn {
+  width: 246px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}

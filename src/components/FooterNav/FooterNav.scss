@@ -1,0 +1,50 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.footer_nav {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.footer_nav_title {
+  @extend %desc-h4;
+  margin-bottom: 22px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer_nav_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      color: $black;
+    }
+  }
+}

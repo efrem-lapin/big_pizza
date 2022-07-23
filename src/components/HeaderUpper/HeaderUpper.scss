@@ -1,0 +1,38 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+
+.header_upper,
+.upper_left,
+.upper_right {
+  display: flex;
+}
+
+.header_upper {
+  justify-content: space-between;
+  padding: 10px 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.upper_left {
+  li {
+    margin-right: 40px;
+  }
+}
+
+.work_time {
+  margin-right: 40px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.icon {
+  @extend %display-flex-center;
+  padding-right: 8px;
+}

@@ -1,0 +1,37 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.sign_up_panel {
+  @extend %d-f-c;
+  cursor: pointer;
+  user-select: none;
+
+  span {
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      color: $black;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 0px;
+    justify-content: start;
+
+    .icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.sing_up_text {
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}

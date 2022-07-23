@@ -1,0 +1,83 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.category {
+  @extend %display-flex-column;
+  padding: 20px 0px;
+  width: 135px;
+  background: $white;
+  border: 1px solid $gray-line;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  margin-right: auto;
+
+  &:hover {
+    span {
+      color: $primary;
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  .icon {
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
+  span {
+    @extend %desc-big-text;
+    transition-duration: 0.3s;
+    user-select: none;
+
+    @media (max-width: 1440px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  @media (max-width: 1440px) {
+    width: 120px;
+    padding: 15px 0px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 90px;
+    padding: 10px 0px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: auto;
+    padding: 10px 10px;
+    margin-right: 4px;
+  }
+}
+
+.category_link {
+  display: block;
+  text-decoration: none;
+}
+
+.category_img {
+  @extend %display-flex-center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+
+  @media (max-width: 1440px) {
+    width: 28px;
+    height: 28px;
+  }
+}

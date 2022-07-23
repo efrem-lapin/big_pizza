@@ -1,0 +1,28 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.menu_list {
+  position: relative;
+  background-color: $white;
+
+  a {
+    display: block;
+    @extend %desc-normal;
+    cursor: pointer;
+
+    li {
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      li {
+        color: $primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

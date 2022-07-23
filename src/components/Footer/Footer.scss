@@ -1,0 +1,73 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+.footer {
+  background-color: $white;
+  border: 1px solid $gray-line;
+}
+
+.footer_inner {
+  padding: 32px;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li {
+    @extend %desc-normal;
+    display: flex;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.footer_box {
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.copyright {
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer_title {
+  @extend %desc-h4;
+  margin-bottom: 22px;
+}
+
+.footer_list_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sb {
+  justify-content: space-between;
+  align-items: start;
+}
+
+

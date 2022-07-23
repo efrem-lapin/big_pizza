@@ -1,0 +1,18 @@
+.cart_list {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  // gap: 20px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.cart_empty {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}

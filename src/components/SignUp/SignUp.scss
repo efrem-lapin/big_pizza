@@ -1,0 +1,91 @@
+.sign_up_wrapper {
+  margin: 0 auto;
+  width: 320px;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 320px) {
+    width: 220px;
+  }
+
+  @media (max-width: 290px) {
+    width: 200px;
+  }
+}
+
+.sign_up_title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 16px;
+
+  @media (max-width: 360px) {
+    font-size: 28px;
+  }
+}
+
+.sign_up_descr {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 20px;
+
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // gap: 16px;
+  margin-bottom: 12px;
+
+  button {
+    width: 100%;
+  }
+
+  .input_label {
+    margin-bottom: 16px;
+  }
+}
+
+.sing_up_info {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 0.4;
+
+  span {
+    color: #000000;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
+}
+
+.sign_btn {
+  width: 100%;
+}
+
+.input_conf {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #F0F0F0;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+}

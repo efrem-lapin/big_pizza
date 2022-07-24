@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .product_title_wrapper {
@@ -92,11 +92,11 @@
   }
 }
 
-.adder_title {
+.add_remove_title {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .product_footer {
@@ -140,7 +140,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 @keyframes openProduct {

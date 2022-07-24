@@ -107,7 +107,7 @@ const ProductModal = ({ item, close }) => {
         </div>
         <div className="product_descr_modal">{item.descr}</div>
         <div className="product_ingredients">
-        <div className="adder_title">Убрать из пиццы:</div>
+        <div className="add_remove_title">Убрать из пиццы:</div>
           <Ingredients
             method="remove"
             items={item.ingredients}
@@ -123,7 +123,7 @@ const ProductModal = ({ item, close }) => {
         </div>
         {item.ingredients ? (
           <div className="ingredients_adder">
-            <div className="adder_title">Добавте в пиццу:</div>
+            <div className="add_remove_title">Добавьте в пиццу:</div>
             <Ingredients method="add" items={addIngredients} />
           </div>
         ) : null}

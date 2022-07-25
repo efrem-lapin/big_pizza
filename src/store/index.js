@@ -7,6 +7,7 @@ import cartSlice from "./cartSlice";
 import accountSlice from "./accountSlice";
 import menuMobileSlice from "./menuMobileSlice";
 import signSlice from "./signSlice";
+import prodOptionsSlice from "./prodOptionsSlice";
 
 export default configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export default configureStore({
     cart: cartSlice,
     account: accountSlice,
     menuMobile: menuMobileSlice,
-    sign: signSlice
+    sign: signSlice,
+    prodOptions: prodOptionsSlice
   },
 });

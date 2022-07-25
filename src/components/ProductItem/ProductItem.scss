@@ -64,7 +64,7 @@
   max-width: 300px;
   width: 100%;
   height: 300px;
-  
+
   @media (max-width: 768px) {
     max-width: none;
   }
@@ -86,13 +86,17 @@
 .product_text {
   display: flex;
   flex-direction: column;
-  height: 80px;
+  // height: 80px;
   margin-bottom: 16px;
   overflow: hidden;
 }
 
 .product_descr {
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .price_info {

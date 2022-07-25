@@ -1,15 +1,15 @@
-import React from "react";
+import React, { memo } from "react";
 import IngredientItem from "../IngredientItem/IngredientItem";
 
 import "./Ingredients.scss";
 
 
-const Ingredients = ({ method, items = [] }) => {
+const Ingredients = memo(function ({ type, items = [], callback }) {
   return (
     <ul className="ingredients">
-      {items.map(item => <IngredientItem key={item.id} item={item} method={method}/>)}
+      {items.map(item => <IngredientItem key={item.id} item={item} type={type} callback={callback}/>)}
     </ul>
   );
-};
+});
 
 export default Ingredients;

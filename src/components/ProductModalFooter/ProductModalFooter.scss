@@ -1,0 +1,36 @@
+.product_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.total_sum {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ff7010;
+  margin-right: 12px;
+
+  @media (max-width: 768px) {
+    white-space: nowrap;
+  }
+}
+
+.total_weight {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #a5a5a5;
+  margin-right: 20px;
+}

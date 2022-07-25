@@ -2,25 +2,30 @@ import React from "react";
 import Icon from "../UI/Icon";
 import IngredientsIcons from "../../services/IngredientsIcons";
 
-const IngredientItem = ({ item, method }) => {
+const IngredientItem = ({ item, type, callback }) => {
   const Icons = new IngredientsIcons();
-  const methods = {
-    remove: "crossIngredient",
-    add: "doneIngredient",
+  const types = {
+    ingredients: "crossIngredient",
+    extras: "doneIngredient",
   };
+
+  function setValue(e) {
+    if (e.target.checked) callback(item, "add", type);
+    else callback(item, "remove", type);
+  }
 
   return (
     <li className="ingredient" >
       <label className="ingredient_wrapper">
-        <input type="checkbox" name="ingredients" defaultChecked={method === "remove"}/>
+        <input type="checkbox" name="ingredients" defaultChecked={type === "ingredients"} onClick={setValue}/>
         <div className="ingredient_box">
-          {method === "remove" ? <div className="btn_ingredient">
-            <Icon name={methods[method]} />
+          {type === "ingredients" ? <div className="btn_ingredient">
+            <Icon name={types[type]} />
           </div> : null}
           <div className="ingredient_icon">{Icons.getIcon(item.icon)}</div>
         </div>
         <span className="ingredient_name">{item.name}</span>
-        {method === "add" ? (
+        {type === "extras" ? (
           <span className="ingredient_price">{item.price} ₽</span>
         ) : null}
       </label>

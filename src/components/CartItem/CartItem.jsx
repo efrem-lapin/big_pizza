@@ -11,12 +11,12 @@ const CartItem = ({ item } ) => {
     dispatch(removeProduct(item.id));
   }
 
-  function addCount(item) {
-    dispatch(addProdCount(item.id));
+  function addCount(id) {
+    dispatch(addProdCount(id));
   }
 
-  function removeCount(item) {
-    dispatch(removeProdCount(item.id));
+  function removeCount(id) {
+    dispatch(removeProdCount(id));
   }
 
   return (
@@ -33,9 +33,9 @@ const CartItem = ({ item } ) => {
         </div>
         <div className="cart_item_amount">
           <div className="cart_item_counter">
-            <div className="cart_counter_btn" onClick={() => removeCount(item)}>-</div>
+            <div className="cart_counter_btn" onClick={() => removeCount(item.id)}>-</div>
             <div className="cart_counter_btn">{ item.count }</div>
-            <div className="cart_counter_btn" onClick={() => addCount(item)}>+</div>
+            <div className="cart_counter_btn" onClick={() => addCount(item.id)}>+</div>
           </div>
           <h2 className="cart_item_sum">{item.price} ₽</h2>
         </div>

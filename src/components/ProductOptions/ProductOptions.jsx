@@ -3,9 +3,10 @@ import { useRef } from "react";
 
 import "./ProductOptions.scss";
 
-const ProductOptions = ({ items, callback }) => {
+const ProductOptions = ({ items, callback, getValue }) => {
   function setValue(e) {
-    callback(() => e.target.value);
+    // callback(() => e.target.value);
+    getValue(e.target.name, e.target.value);
   }
 
   return (

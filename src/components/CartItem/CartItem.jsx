@@ -1,5 +1,5 @@
 import React from "react";
-import { addProdCount, removeProdCount, removeProduct} from "../../redux/cartSlice";
+import { addProdCount, removeProdCount, removeProduct} from "../../store/cartSlice";
 import { useDispatch, useSelector} from "react-redux/es/exports";
 
 import "./CartItem.scss";

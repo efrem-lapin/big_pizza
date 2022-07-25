@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsScrollHeader } from "../../redux/scrollHeaderSlice";
-import { setTopScroll } from "../../redux/scrollHeaderSlice";
+import { setIsScrollHeader } from "../../store/scrollHeaderSlice";
+import { setTopScroll } from "../../store/scrollHeaderSlice";
 import SignUpPanel from "../SignUpPanel/SignUpPanel";
 import LocationCity from "../LocationCity/LocationCity";
 import LinkToScroll from "../LinkToScroll/LinkToScroll";

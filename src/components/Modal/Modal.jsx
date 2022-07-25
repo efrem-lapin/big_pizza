@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Overlay from "../Overlay/Overlay";
 import Icon from "../UI/Icon";
-import { setIsModal } from "../../redux/modalSlice";
+import { setIsModal } from "../../store/modalSlice";
 import { useDispatch } from "react-redux/es/exports";
 
 import "./Modal.scss";

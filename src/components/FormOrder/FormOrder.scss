@@ -15,9 +15,13 @@
 .form_input_wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
   width: 100%;
+
+  .input_label {
+    margin-right: 12px;
+  }
 
   li {
     width: 100%;
@@ -35,6 +39,10 @@
   @media (max-width: 768px) {
     flex-direction: column;
     margin-bottom: 16px;
+
+    .input_label {
+      margin-right: 0px;
+    }
 
     &:first-child {
       margin-bottom: 0;

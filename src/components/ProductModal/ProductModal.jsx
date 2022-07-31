@@ -7,6 +7,7 @@ import ProductModalHeader from "../ProductModalHeader/ProductModalHeader";
 import ProductModalLeft from "../ProductModalLeft/ProductModalLeft";
 import ProductComposition from "../ProductComposition/ProductComposition";
 import { calcSum, setOptions, resetOptions } from "../../store/prodOptionsSlice";
+import { addPopup, removePopup } from "../../store/popupSlice";
 
 import "./ProductModal.scss";
 
@@ -29,7 +30,12 @@ const ProductModal = ({ item, close }) => {
 
   function addProductCart() {
     dispatch(addProduct(orderProduct));
-    dispatch(setIsCart(true));
+    dispatch(addPopup({id: Math.random(), text: "Товар добавлен!"}));
+
+    setTimeout(() => {
+      dispatch(removePopup())
+    }, 2000);
+
     close();
   }
 

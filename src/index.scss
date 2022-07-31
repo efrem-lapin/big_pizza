@@ -202,6 +202,8 @@ a {
 }
 
 .order_cart {
+  height: 60vh;
+  overflow-y: auto;
   .cart_item_info {
     display: flex;
     justify-content: space-between;

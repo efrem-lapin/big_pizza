@@ -6,9 +6,13 @@ import OrderFooter from "../OrderFooter/OrderFooter";
 import TextArea from "../TextArea/TextArea";
 import InputList from "../InputList/InputList";
 import Selector from "../Selector/Selector";
+import { useSelector } from "react-redux";
 
 import "./FormOrder.scss";
-
+import OrderOptions from "../OrderOptions/OrderOptions";
+import OrderSection from "../OrderSection/OrderSection";
+import OrderCustomer from "../OrderCustomer/OrderCustomer";
+import OrderDevilery from "../OrderDevilery/OrderDevilery";
 
 const FormOrder = () => {
   const listInput = [
@@ -17,7 +21,7 @@ const FormOrder = () => {
       type: "text",
       name: "house",
       placeholder: "1а",
-      id: "input2"
+      id: "input2",
     },
 
     {
@@ -25,7 +29,7 @@ const FormOrder = () => {
       type: "text",
       name: "house",
       placeholder: "1",
-      id: "input3"
+      id: "input3",
     },
 
     {
@@ -33,7 +37,7 @@ const FormOrder = () => {
       type: "text",
       name: "flat",
       placeholder: "2",
-      id: "input4"
+      id: "input4",
     },
 
     {
@@ -41,7 +45,7 @@ const FormOrder = () => {
       type: "text",
       name: "floor",
       placeholder: "3",
-      id: "input6"
+      id: "input6",
     },
 
     {
@@ -49,7 +53,7 @@ const FormOrder = () => {
       type: "text",
       name: "intercom",
       placeholder: "0000",
-      id: "input7"
+      id: "input7",
     },
   ];
 
@@ -107,53 +111,32 @@ const FormOrder = () => {
       id: "devi",
       name: "devilery",
       label: "Доставка",
-      value: "with_dev",
+      value: true,
       checked: true,
     },
     {
       id: "nondevi",
       name: "devilery",
       label: "Самовывоз",
-      value: "non_dev",
+      value: false,
     },
   ];
 
-  const [dev, setDev] = useState("with_dev");
   const [change, setChange] = useState("non_change");
   const [speed, setSpeed] = useState("fast");
 
+  const devilery = useSelector((state) => state.order.devilery);
+
   return (
     <form className="order_form">
-      <div className="order_section">
-        <h2 className="form_title">О вас</h2>
-        <div className="form_input_wrapper">
-          <InputLabel
-            label="Имя*"
-            type="text"
-            name="name"
-            placeholder="Алексей"
-          />
-          <InputLabel
-            label="Номер телефона**"
-            type="text"
-            name="phone"
-            placeholder="+7"
-          />
-          <InputLabel
-            label="Почта*"
-            type="email"
-            name="mail"
-            placeholder="mail@gmail.com"
-          />
-        </div>
-      </div>
+      <OrderCustomer/>
 
-      <div className="order_section">
+      {/* <div className="order_section">
         <div className="order_section_head">
           <h2 className="form_title">Доставка</h2>
-          <ProductOptions items={prodOptions} callback={setDev} />
+          <OrderOptions items={prodOptions} />
         </div>
-        {dev === "with_dev" ? (
+        {devilery ? (
           <>
             <div className="form_input_wrapper">
               <InputList
@@ -163,7 +146,7 @@ const FormOrder = () => {
                     type: "text",
                     name: "street",
                     placeholder: "Пушкина",
-                    id: "input1"
+                    id: "input1",
                   },
                 ]}
               />
@@ -185,19 +168,21 @@ const FormOrder = () => {
             <RadioList items={listOne} callback={setSpeed} />
             {speed === "time" && (
               <div className="dev_time">
-                <Selector text="Дата" icon="arrow" type="calendar"/>
-                <Selector text="Время" icon="arrow" type="timerange"/>
+                <Selector text="Дата" icon="arrow" type="calendar" />
+                <Selector text="Время" icon="arrow" type="timerange" />
               </div>
             )}
           </div>
         </div>
-      </div>
-      <div className="order_section">
-        <p className="form_title">Оплата</p>
+      </div> */}
+
+      <OrderDevilery />
+
+      <OrderSection title="Оплата">
         <RadioList items={listTwo} />
-      </div>
-      <div className="order_section">
-        <p className="form_title">Сдача</p>
+      </OrderSection>
+
+      <OrderSection title="Сдача">
         <div className="change_wrapper">
           <RadioList items={listThree} callback={setChange} />
           {change === "change" && (
@@ -207,7 +192,8 @@ const FormOrder = () => {
             </div>
           )}
         </div>
-      </div>
+      </OrderSection>
+
       <TextArea title="Комментарий" placeholder="Есть что уточнить?" />
       <OrderFooter path="/orderaccept" />
     </form>

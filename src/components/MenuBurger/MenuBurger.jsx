@@ -6,18 +6,25 @@ import "./MenuBurger.scss";
 
 const MenuBurger = () => {
   const dispatch = useDispatch();
-  const active = useSelector(state => state.menuMobile.active)
+  const active = useSelector((state) => state.menuMobile.active);
+  const cart = useSelector((state) => state.cart.cartList);
 
   function toggle() {
     dispatch(setActive(!active));
   }
 
   return (
-    <div className={active ? "menu_burger burger_active" : "menu_burger"} onClick={toggle}>
-      <span className="burger_line"></span>
-      <span className="burger_line"></span>
-      <span className="burger_line"></span>
-    </div>
+    <>
+      {cart.length ? <div className="burger_circle">{cart.length}</div> : null}
+      <div
+        className={active ? "menu_burger burger_active" : "menu_burger"}
+        onClick={toggle}
+      >
+        <span className="burger_line"></span>
+        <span className="burger_line"></span>
+        <span className="burger_line"></span>
+      </div>
+    </>
   );
 };
 

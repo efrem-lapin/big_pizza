@@ -1,4 +1,5 @@
 .menu_burger {
+  position: relative;
     span {
       transition-duration: 0.3s;
     }
@@ -17,5 +18,33 @@
     &:nth-child(2) {
       transform: rotate(-45deg);
     }
+  }
+}
+
+.burger_circle {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  // width: 20px;
+  // height: 20px;
+  top: 10px;
+  right: -10px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background-color: #E23535;
+  z-index: 11;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 3px 6px;
+    display: flex;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 12px;
+    padding: 2px 4px;
   }
 }

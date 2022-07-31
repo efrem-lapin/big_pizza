@@ -8,6 +8,8 @@ import accountSlice from "./accountSlice";
 import menuMobileSlice from "./menuMobileSlice";
 import signSlice from "./signSlice";
 import prodOptionsSlice from "./prodOptionsSlice";
+import popupSlice from "./popupSlice";
+import orderSlice from "./orderSlice";
 
 export default configureStore({
   reducer: {
@@ -19,6 +21,8 @@ export default configureStore({
     account: accountSlice,
     menuMobile: menuMobileSlice,
     sign: signSlice,
-    prodOptions: prodOptionsSlice
+    prodOptions: prodOptionsSlice,
+    popup: popupSlice,
+    order: orderSlice,
   },
 });

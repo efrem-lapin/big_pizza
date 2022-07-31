@@ -1,0 +1,15 @@
+.popup_list {
+  position: fixed;
+  display: flex;
+  flex-direction: column-reverse;
+  bottom: 20px;
+  right: 20px;
+  z-index: 11;
+  overflow: hidden;
+
+  @media (max-width: 886px) {
+    height: 44px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

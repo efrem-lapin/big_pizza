@@ -4,6 +4,8 @@ import InputPanel from "../components/InputPanel/InputPanel";
 import SliderProduct from "../components/SliderProduct/SliderProduct";
 import FormOrder from "../components/FormOrder/FormOrder";
 import { useSelector } from "react-redux";
+import Popup from "../components/Popup/Popup";
+import PopupList from "../components/PopupList/PopupList";
 
 const OrderPage = () => {
   const sum = useSelector(state => state.cart.cartSum);

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../UI/Button";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../store/cartSlice";
+import { addPopup, removePopup } from "../../store/popupSlice";
 
 import "./SliderProdItem.scss";
 
@@ -10,6 +11,11 @@ const SliderProdItem = ({ item }) => {
 
   function add() {
     dispatch(addProduct(item));
+    dispatch(addPopup({text: "Товар добавлен!"}));
+
+    setTimeout(() => {
+      dispatch(removePopup())
+    }, 2000);
   }
 
   return (

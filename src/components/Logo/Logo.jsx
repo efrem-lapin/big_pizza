@@ -9,7 +9,7 @@ const Logo = () => {
     <Link to="/">
       <div className="logo">
         <Icon name="logoPizza" />
-        <div className="logo_title">Куда пицца</div>
+        <div className="logo_title">BIGПицца</div>
       </div>
     </Link>
   );

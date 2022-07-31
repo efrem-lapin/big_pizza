@@ -17,8 +17,8 @@ const Menu = () => {
   return (
     <ul className="menu_list">
       {menuItems.map((item) => (
-        <Link to={item.path}>
-          <li className="menu_item" key={item.id}>
+        <Link to={item.path} key={item.id}>
+          <li className="menu_item">
             {item.title}
           </li>
         </Link>

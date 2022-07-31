@@ -1,4 +1,5 @@
 .cart_item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +20,33 @@
 
   @media (max-width: 450px) {
     padding: 10px;
+  }
+}
+
+.ex_list {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  background-color: #ffeee2;
+  padding: 4px;
+}
+
+.ex_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -54,6 +82,10 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
+}
+
+.cart_item_weigth {
+  color: #00000070;
 }
 
 .cart_item_options {

@@ -1,9 +1,17 @@
 import React from "react";
 import Button from "../UI/Button";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../store/cartSlice";
 
 import "./SliderProdItem.scss";
 
 const SliderProdItem = ({ item }) => {
+  const dispatch = useDispatch();
+
+  function add() {
+    dispatch(addProduct(item));
+  }
+
   return (
     <li className="slider_item">
       <img
@@ -12,9 +20,9 @@ const SliderProdItem = ({ item }) => {
         className="slider_item_img"
       />
       <div className="slider_item_info">
-        <h3 className="slider_item_title">{item.title}</h3>
-        {item.width && <p className="slider_item_descr">{"Порция" + item.width + " гр"}</p>}
-        <Button text={item.price + " ₽"} />
+        <h3 className="slider_item_title">{item.name}</h3>
+        {item.width && <p className="slider_item_descr">{"Порция" + item.weigth + " гр"}</p>}
+        <Button text={item.price + " ₽"} click={add}/>
       </div>
     </li>
   );

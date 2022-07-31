@@ -46,7 +46,7 @@ const ProductModalOptions = ({ type, getValue = null }) => {
       [
         {
           id: "sushiCount1",
-          name: "sushiSize",
+          name: "sushisize",
           value: "small",
           label: "8шт",
           checked: true,
@@ -54,7 +54,7 @@ const ProductModalOptions = ({ type, getValue = null }) => {
 
         {
           id: "sushiCount2",
-          name: "sushiSize",
+          name: "sushisize",
           value: "big",
           label: "16шт",
           checked: false,

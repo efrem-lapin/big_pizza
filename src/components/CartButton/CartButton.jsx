@@ -7,10 +7,9 @@ import { setActive } from "../../store/menuMobileSlice";
 import "./CartButton.scss";
 
 const CartButton = ({hidden}) => {
-  const cart = useSelector((state) => state.cart.cartList);
-  const sum = cart.length && cart.reduce((sum, item) => sum + item.price * item.count, 0);
-
   const dispatch = useDispatch();
+  const sum = useSelector((state) => state.cart.cartSum);
+
   function openCart() {
     dispatch(setIsCart(true));
     dispatch(setActive(false));

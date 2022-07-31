@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { useRef } from "react";
+import { setOptions } from "../../store/prodOptionsSlice";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { setProd, calcSum } from "../../store/prodOptionsSlice";
 
 import "./ProductOptions.scss";
 
-const ProductOptions = ({ items, callback, getValue }) => {
-  function setValue(e) {
-    // callback(() => e.target.value);
-    getValue(e.target.name, e.target.value);
+const ProductOptions = ({ items }) => {
+  const dispatch = useDispatch();
+  function setValue(e, item) {
+    if (e.target.checked) dispatch(setOptions({[item.name]: item.value}));
+    dispatch(calcSum());
   }
 
   return (
@@ -19,7 +23,7 @@ const ProductOptions = ({ items, callback, getValue }) => {
               name={item.name}
               value={item.value}
               defaultChecked={item.checked}
-              onClick={setValue}
+              onClick={(e) => setValue(e, item)}
             />
             <span>{item.label}</span>
           </label>

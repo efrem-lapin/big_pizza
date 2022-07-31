@@ -6,69 +6,68 @@ import FormOrder from "../components/FormOrder/FormOrder";
 import { useSelector } from "react-redux";
 
 const OrderPage = () => {
-  const cart = useSelector((state) => state.cart.cartList);
-  const sum = cart.length && cart.reduce((sum, item) => sum + item.price * item.count, 0);
+  const sum = useSelector(state => state.cart.cartSum);
 
   const otherItems = [
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide1",
     },
     {
-      title: "Филадельфия крем-брюле",
-      width: 55,
+      name: "Филадельфия крем-брюле",
+      weigth: 55,
       price: 120,
       img: "img/products/sushi/sushi2.jpg",
       id: "slide2",
     },
     {
-      title: "Супер Филадельфия",
-      width: 150,
+      name: "Супер Филадельфия",
+      weigth: 150,
       price: 235,
       img: "img/products/sushi/sushi1.jpg",
       id: "slide3",
     },
     {
-      title: "Тигр мама",
-      width: 120,
+      name: "Тигр мама",
+      weigth: 120,
       price: 145,
       img: "img/products/other/frie.jpg",
       id: "slide4",
     },
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide5",
     },
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide6",
     },
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide7",
     },
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide8",
     },
     {
-      title: "Картофель из печи",
-      width: 95,
+      name: "Картофель из печи",
+      weigth: 95,
       price: 175,
       img: "img/products/other/frie.jpg",
       id: "slide9",
@@ -76,45 +75,45 @@ const OrderPage = () => {
   ];
 
   const sauceItems = [
-    { title: "Сырный соус", price: 95, img: "img/products/sauces/cheese.jpg", id: "slide_sauce0", },
+    { name: "Сырный соус", price: 95, img: "img/products/sauces/cheese.jpg", id: "slide_sauce0", },
     {
-      title: "Томатный соус",
+      name: "Томатный соус",
       price: 69,
       img: "img/products/sauces/tomato.jpg",
       id: "slide_sauce1",
     },
     {
-      title: "Майонез",
+      name: "Майонез",
       price: 40,
       img: "img/products/sauces/mayonnaise.jpg",
       id: "slide_sauce2",
     },
     {
-      title: "Аджика",
+      name: "Аджика",
       price: 100,
       img: "img/products/sauces/adjika.jpg",
       id: "slide_sauce3",
     },
     {
-      title: "Сырный соус",
+      name: "Сырный соус",
       price: 95,
       img: "img/products/sauces/cheese.jpg",
       id: "slide_sauce4",
     },
     {
-      title: "Томатный соус",
+      name: "Томатный соус",
       price: 69,
       img: "img/products/sauces/tomato.jpg",
       id: "slide_sauce5",
     },
     {
-      title: "Майонез",
+      name: "Майонез",
       price: 40,
       img: "img/products/sauces/mayonnaise.jpg",
       id: "slide_sauce6",
     },
     {
-      title: "Аджика",
+      name: "Аджика",
       price: 100,
       img: "img/products/sauces/adjika.jpg",
       id: "slide_sauce7",

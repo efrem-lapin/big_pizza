@@ -7,7 +7,7 @@ import "./MenuBurger.scss";
 const MenuBurger = () => {
   const dispatch = useDispatch();
   const active = useSelector((state) => state.menuMobile.active);
-  const cart = useSelector((state) => state.cart.cartList);
+  const cart = useSelector((state) => state.cart.list);
 
   function toggle() {
     dispatch(setActive(!active));

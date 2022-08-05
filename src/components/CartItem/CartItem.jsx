@@ -3,6 +3,7 @@ import {
   addProdCount,
   removeProdCount,
   removeProduct,
+  recount
 } from "../../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import IngredientsIcons from "../../services/IngredientsIcons";
@@ -14,16 +15,16 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const Icons = new IngredientsIcons();
 
-  if (item.count < 1) {
-    dispatch(removeProduct(item.idItemCart));
-  }
+  // if (item.count < 1) {
+  //   dispatch(removeProduct(item.idItemCart));
+  // }
 
   function addCount(idItemCart) {
-    dispatch(addProdCount(idItemCart));
+    dispatch(recount({id: idItemCart, increment: true}));
   }
 
   function removeCount(idItemCart) {
-    dispatch(removeProdCount(idItemCart));
+    dispatch(recount({id: idItemCart}));
   }
 
   return (

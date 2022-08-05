@@ -1,8 +1,10 @@
 import Button from "../UI/Button";
+import { useSelector } from "react-redux";
 
 import "./ProductModalFooter.scss";
 
-const ProductModalFooter = ({sum = 0, weight = 0, addProductCart}) => {
+const ProductModalFooter = ({ weight = 0, addProductCart}) => {
+  const sum = useSelector((state) => state.prodOptions.sum);
   return (
     <div className="product_footer">
       <div className="total">

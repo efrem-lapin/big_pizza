@@ -47,7 +47,7 @@ const ProductModal = ({ item, close }) => {
         />
 
         {/* В ЗАВИСИМОСТИ ОТ ТИПА ПРОДУКТА ВЫВОДИМ ОПЦИИ*/}
-        {item.type === "pizza" && <PizzaOptions item={item} />}
+        {item.type === "pizza" && <PizzaOptions ingredients={item.ingredients} />}
         {item.type === "sushi" && <SushiOptions />}
 
         <ProductModalFooter

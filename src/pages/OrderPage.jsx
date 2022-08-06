@@ -8,7 +8,7 @@ import Popup from "../components/Popup/Popup";
 import PopupList from "../components/PopupList/PopupList";
 
 const OrderPage = () => {
-  const sum = useSelector(state => state.cart.cartSum);
+  const sum = useSelector(state => state.cart.sum);
 
   const otherItems = [
     {

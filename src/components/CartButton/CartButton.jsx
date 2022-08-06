@@ -8,7 +8,7 @@ import "./CartButton.scss";
 
 const CartButton = ({hidden}) => {
   const dispatch = useDispatch();
-  const sum = useSelector((state) => state.cart.cartSum);
+  const sum = useSelector((state) => state.cart.sum);
 
   function openCart() {
     dispatch(setIsCart(true));

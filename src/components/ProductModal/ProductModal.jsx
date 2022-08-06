@@ -41,7 +41,7 @@ const ProductModal = ({ item, close }) => {
 
       <div className="product_right">
         <ProductModalHeader
-          labelFire={item.label === "ХИТ"}
+          labelFire={item.label && item.label.toUpperCase() === "ХИТ"}
           title={item.name}
           descr={item.descr}
         />

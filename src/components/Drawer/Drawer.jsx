@@ -8,7 +8,7 @@ import "./Drawer.scss";
 
 const Drawer = ({ title, type, children, closeCallback }) => {
   const [isClose, setIsClose] = useState(false);  // Сначала срабатывает стейт, потом через время колбек
-  const sum = useSelector((state) => state.cart.cartSum);
+  const sum = useSelector((state) => state.cart.sum);
 
   const footer = {
     filter: (

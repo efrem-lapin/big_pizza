@@ -13,7 +13,7 @@ import "./App.scss";
 import Popup from "./components/Popup/Popup";
 
 const App = () => {
-  return (
+    return (
     <div className="App">
       <PopupList />
       <Cart />

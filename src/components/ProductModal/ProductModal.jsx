@@ -1,28 +1,30 @@
 import React from "react";
-import { addProduct } from "../../store/cartSlice";
+import { addProduct } from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import ProductModalFooter from "../ProductModalFooter/ProductModalFooter";
 import ProductModalHeader from "../ProductModalHeader/ProductModalHeader";
 import ProductModalLeft from "../ProductModalLeft/ProductModalLeft";
 import PizzaOptions from "../PizzaOptions/PizzaOptions";
-import { calcSum, setOptions } from "../../store/prodOptionsSlice";
-import { addPopup, removePopup } from "../../store/popupSlice";
+import { calcSum, setOptions } from "../../store/slices/prodOptionsSlice";
+import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 import "./ProductModal.scss";
 import SushiOptions from "../SushiOptions/SushiOptions";
+import { useState } from "react";
 
 const ProductModal = ({ item, close }) => {
   const dispatch = useDispatch();
-  const orderProduct = useSelector((state) => state.prodOptions);
+  const [currProd, setCurrProd] = useState();
+  const productOptions = useSelector((state) => state.prodOptions);
 
   React.useEffect(() => {
-    dispatch(setOptions(item));
-    dispatch(calcSum(orderProduct));
+    dispatch(setOptions(item)); // добавляем в опции основной id товара
+    // dispatch(calcSum(orderProduct));     // высчитываем сумму товара и опций
   }, []);
 
   function addProductCart() {
     // ДОБАЛЯЕМ СОБРАННЫЙ ПРОДУКТ 
-    dispatch(addProduct(orderProduct));
+    // dispatch(addProduct(orderProduct));
     // ДОБАВЛЯЕМ PUPUP В СПИСОК
     dispatch(addPopup({ id: Math.random(), text: "Товар добавлен!" })); 
 
@@ -50,10 +52,7 @@ const ProductModal = ({ item, close }) => {
         {item.type === "pizza" && <PizzaOptions ingredients={item.ingredients} />}
         {item.type === "sushi" && <SushiOptions />}
 
-        <ProductModalFooter
-          weight={400}
-          addProductCart={addProductCart}
-        />
+        <ProductModalFooter item={item}/>
       </div>
     </>
   );

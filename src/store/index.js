@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import scrollHeaderSlice from "./scrollHeaderSlice";
-import dropListSlice from "./dropListSlice";
-import modalSlice from "./modalSlice";
-import filterSlice from "./filterSlice";
-import cartSlice from "./cartSlice";
-import accountSlice from "./accountSlice";
-import menuMobileSlice from "./menuMobileSlice";
-import signSlice from "./signSlice";
-import prodOptionsSlice from "./prodOptionsSlice";
-import popupSlice from "./popupSlice";
-import orderSlice from "./orderSlice";
+import scrollHeaderSlice from "./slices/scrollHeaderSlice";
+import dropListSlice from "./slices/dropListSlice";
+import modalSlice from "./slices/modalSlice";
+import filterSlice from "./slices/filterSlice";
+import cartSlice from "./slices/cartSlice";
+import accountSlice from "./slices/accountSlice";
+import menuMobileSlice from "./slices/menuMobileSlice";
+import signSlice from "./slices/signSlice";
+import prodOptionsSlice from "./slices/prodOptionsSlice";
+import popupSlice from "./slices/popupSlice";
+import orderSlice from "./slices/orderSlice";
+import extrasProdSlice from "./slices/extrasProdSlice";
+import ingredientsProdSlice from "./slices/ingredientsProdSlice";
 
 export default configureStore({
   reducer: {
@@ -24,5 +26,7 @@ export default configureStore({
     prodOptions: prodOptionsSlice,
     popup: popupSlice,
     order: orderSlice,
+    extrasProd: extrasProdSlice,
+    ingredientsProd: ingredientsProdSlice
   },
 });

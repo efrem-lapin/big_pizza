@@ -1,5 +1,5 @@
 import React from "react";
-import { setActive } from "../../store/menuMobileSlice";
+import { setActive } from "../../store/slices/menuMobileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./MenuBurger.scss";

@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "../UI/Icon";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsCart } from "../../store/cartSlice";
-import { setActive } from "../../store/menuMobileSlice";
+import { setIsCart } from "../../store/slices/cartSlice";
+import { setActive } from "../../store/slices/menuMobileSlice";
 
 import "./CartButton.scss";
 

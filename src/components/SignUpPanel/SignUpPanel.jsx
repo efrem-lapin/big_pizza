@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 import SignUp from "../SignUp/SignUp";
 import Icon from "../UI/Icon";
-import {setSign} from "../../store/signSlice";
+import {setSign} from "../../store/slices/signSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setActive } from "../../store/menuMobileSlice";
+import { setActive } from "../../store/slices/menuMobileSlice";
 
 import "./SignUpPanel.scss";
 

@@ -2,10 +2,10 @@ import React from "react";
 import Drawer from "../../components/Drawer/Drawer";
 import CartContent from "../../components/CartContent/CartContent";
 import Modal from "../../components/Modal/Modal";
-import { setIsCart } from "../../store/cartSlice";
+import { setIsCart } from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SignUp from "../../components/SignUp/SignUp";
-import { setSign } from "../../store/signSlice";
+import { setSign } from "../../store/slices/signSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();

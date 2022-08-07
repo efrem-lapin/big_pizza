@@ -4,7 +4,7 @@ import {
   removeProdCount,
   removeProduct,
   recount
-} from "../../store/cartSlice";
+} from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import IngredientsIcons from "../../services/IngredientsIcons";
 

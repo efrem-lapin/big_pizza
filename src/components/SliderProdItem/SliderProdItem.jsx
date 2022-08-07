@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "../UI/Button";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../store/cartSlice";
-import { addPopup, removePopup } from "../../store/popupSlice";
+import { addProduct } from "../../store/slices/cartSlice";
+import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 import "./SliderProdItem.scss";
 

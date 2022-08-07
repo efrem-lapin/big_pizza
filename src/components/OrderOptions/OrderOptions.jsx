@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch} from "react-redux";
-import { setOptions } from "../../store/orderSlice";
+import { setOptions } from "../../store/slices/orderSlice";
 
 const OrderOptions = ({ items }) => {
   const dispatch = useDispatch();

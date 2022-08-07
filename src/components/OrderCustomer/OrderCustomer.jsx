@@ -1,7 +1,7 @@
 import React from "react";
 import OrderSection from "../OrderSection/OrderSection";
 import InputLabel from "../UI/InputLabel";
-import { setCustomer } from "../../store/orderSlice";
+import { setCustomer } from "../../store/slices/orderSlice";
 import { useDispatch } from "react-redux";
 
 const OrderCustomer = () => {

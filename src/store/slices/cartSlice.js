@@ -21,17 +21,34 @@ export const cartSlice = createSlice({
     },
 
     addProduct: (state, action) => {
-      const index = state.list.findIndex(item => item.id === action.payload.id);
+      // const index = state.list.findIndex(item => item.id === action.payload.id);
 
       // ЕСЛИ ТОВАР УЖЕ ЕСТЬ В КОРЗИНЕ, ТОГДА УВЕЛИЧИВАЕМ ЕГО КОЛЛИЧЕСТВО
-      if (index > -1) {
-        const isSimilar = JSON.stringify(state.list[index]) === JSON.stringify(action.payload);
-        if (isSimilar) state.list[index].count++;
-      } else  {
-        // ИНАЧЕ ГЕНЕРИРУЕМ ИНДИФИКАТОР, УСТАНАВЛИВАЕМ КОЛ-ВО ТОВАРА И ДОБАВЛЯЕМ В КОРЗИНУ
-        const idItemCart = Math.random();
-        state.list.push({ ...action.payload, idItemCart, count: 1 });
-      }
+      // if (index > -1) {
+      //   // const isSimilar = JSON.stringify(state.list[index]) === JSON.stringify(action.payload);
+      //   state.list.map(item => {
+      //     if (item.id === state.list[index].id) {
+      //       const isSimilar = JSON.stringify(state.list[index]) === JSON.stringify(item);
+      //       if (isSimilar) {
+      //         return item.count++;
+      //       }
+      //     }
+      //   })
+      //   // if (isSimilar) state.list[index].count++;
+      // } else  {
+      //   // ИНАЧЕ ГЕНЕРИРУЕМ ИНДИФИКАТОР, УСТАНАВЛИВАЕМ КОЛ-ВО ТОВАРА И ДОБАВЛЯЕМ В КОРЗИНУ
+      //   const idItemCart = Math.random();
+      //   state.list.push({ ...action.payload, idItemCart, count: 1 });
+      // }
+
+      state.list.map(item => {
+        if (item.id === action.payload.id) {
+          if (JSON.stringify(item) === JSON.stringify(action.payload)) {
+            // idItemCart разный, плюс COUNT разный, это нужно как то решить
+          }
+        }
+      })
+
       calcSum(state);
     },
 

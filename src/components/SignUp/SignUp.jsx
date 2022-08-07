@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import InputLabel from "../UI/InputLabel";
-import { setActive } from "../../store/menuMobileSlice";
+import { setActive } from "../../store/slices/menuMobileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./SignUp.scss";

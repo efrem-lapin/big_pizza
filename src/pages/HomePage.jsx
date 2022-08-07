@@ -4,7 +4,7 @@ import PostersList from "../components/PostersList/PostersList";
 
 import ProductSection from "../components/ProductSection/ProductSection";
 import ArticleHidden from "../components/ArticleHidden/ArticleHidden";
-import { setIsOpenFilter } from "../store/filterSlice";
+import { setIsOpenFilter } from "../store/slices/filterSlice";
 import { useDispatch } from "react-redux";
 import CheckLocation from "../components/CheckLocation/CheckLocation";
 

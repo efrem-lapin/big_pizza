@@ -13,15 +13,6 @@ import "./App.scss";
 import Popup from "./components/Popup/Popup";
 
 const App = () => {
-  const [pizza, setPizza] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch('http://localhost:3001/pizza')
-    .then(res => res.json())
-    .then(data => setPizza(data));
-  }, []);
-
-  console.log(pizza);
     return (
     <div className="App">
       <PopupList />

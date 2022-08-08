@@ -6,28 +6,24 @@ import { setProd, calcSum } from "../../store/slices/prodOptionsSlice";
 
 import "./ProductOptions.scss";
 
-const ProductOptions = ({ items }) => {
-  const dispatch = useDispatch();
-  function setValue(e, item) {
-    if (e.target.checked) dispatch(setOptions({[item.name]: item.value}));
-    dispatch(calcSum());
-  }
+const ProductOptions = ({ options }) => {
+  // const dispatch = useDispatch();
+  // function setValue(e, item) {
+  //   if (e.target.checked) dispatch(setOptions({ [item.name]: item.value }));
+  //   dispatch(calcSum());
+  // }
+
+  const [value, setValue] = useState(0);
 
   return (
     <div className="options_list">
-      {items.map((item) => (
-        <div className="options_item" key={item.id}>
-          <label>
-            <input
-              type="radio"
-              name={item.name}
-              value={item.value}
-              defaultChecked={item.checked}
-              onClick={(e) => setValue(e, item)}
-            />
-            <span>{item.label}</span>
-          </label>
-        </div>
+      {options.map((option, i) => (
+        <button
+          className={i === value ? "options_item option_active" : "options_item"}
+          onClick={() => setValue(i)}
+        >
+          {option.title}
+        </button>
       ))}
     </div>
   );

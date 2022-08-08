@@ -1,16 +1,23 @@
-import ExtrasProd from "../ExtrasProd/ExtrasProd";
-import ProductComposition from "../ProductComposition/ProductComposition";
-import ProductModalOptions from "../ProductModalOptions/ProductModalOptions";
+import ProductOptions from "../ProductOptions/ProductOptions";
 
-const ProductModalPizza = ({ingredients}) => {
+const PizzaOptions = () => {
+  const thickness = [
+    { id: "thickess1", title: "Традиционная" },
+    { id: "thickness2", title: "Тонкая" },
+  ];
+
+  const size = [
+    { id: "size1", title: "20 см" },
+    { id: "tsize2", title: "28 см" },
+    { id: "tsize3", title: "30 см" },
+  ];
+
   return (
-    <>
-      <ProductComposition title="Убрать из пиццы:" type="ingredients" items={ingredients}/>
-      <ProductModalOptions type="pizza" />
-      {/* <ProductComposition title="Добавьте в пиццу:" type="extras" /> */}
-      <ExtrasProd />
-    </>
+    <div className="product_options">
+      <ProductOptions options={thickness} />
+      <ProductOptions options={size} />
+    </div>
   );
 };
 
-export default ProductModalPizza;
+export default PizzaOptions;

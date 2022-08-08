@@ -1,4 +1,4 @@
-import ProductModalOptions from "../ProductModalOptions/ProductModalOptions";
+import ProductModalOptions from "../PizzaOptions/PizzaOptions";
 
 const SushiOptions = () => {
     return (

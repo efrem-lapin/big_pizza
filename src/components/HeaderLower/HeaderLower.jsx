@@ -7,12 +7,10 @@ import MenuBurger from "../MenuBurger/MenuBurger";
 
 import "./HeaderLower.scss";
 import CartButton from "../CartButton/CartButton";
-
+import { useSelector } from "react-redux";
 
 const HeaderLower = () => {
-  const data = new CatigoriesData();
-  const categories = data.catigories;
-
+  const isScrollHeader = useSelector(state => state.scrollHeader.isScrollHeader)
   return (
     <div className="header_low">
       <div className="container">
@@ -20,7 +18,7 @@ const HeaderLower = () => {
           <div className="lower_left">
             <Logo />
           </div>
-          <Navigation categories={categories} />
+          {isScrollHeader && <Navigation />}
           <div className="lower_right">
             <CartButton hidden/>
             <MenuBurger/>

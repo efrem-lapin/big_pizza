@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 import ProductModalFooter from "../ProductModalFooter/ProductModalFooter";
 import ProductModalHeader from "../ProductModalHeader/ProductModalHeader";
 import ProductModalLeft from "../ProductModalLeft/ProductModalLeft";
-import PizzaOptions from "../PizzaOptions/PizzaOptions";
+import PizzaOptions from "../PizzaModal/PizzaModal";
 import { calcSum, setOptions } from "../../store/slices/prodOptionsSlice";
 import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
@@ -18,15 +18,16 @@ const ProductModal = ({ item, close }) => {
   const productOptions = useSelector((state) => state.prodOptions);
 
   React.useEffect(() => {
+    const prod = { id: item.id, price: item.price, name: item.name, descr: item.descr };
     dispatch(setOptions(item)); // добавляем в опции основной id товара
     // dispatch(calcSum(orderProduct));     // высчитываем сумму товара и опций
   }, []);
 
   function addProductCart() {
-    // ДОБАЛЯЕМ СОБРАННЫЙ ПРОДУКТ 
+    // ДОБАЛЯЕМ СОБРАННЫЙ ПРОДУКТ
     // dispatch(addProduct(orderProduct));
     // ДОБАВЛЯЕМ PUPUP В СПИСОК
-    dispatch(addPopup({ id: Math.random(), text: "Товар добавлен!" })); 
+    dispatch(addPopup({ id: Math.random(), text: "Товар добавлен!" }));
 
     // УДАЛЯЕМ PUPUP ИЗ СПИСКА
     setTimeout(() => {
@@ -49,10 +50,12 @@ const ProductModal = ({ item, close }) => {
         />
 
         {/* В ЗАВИСИМОСТИ ОТ ТИПА ПРОДУКТА ВЫВОДИМ ОПЦИИ*/}
-        {item.type === "pizza" && <PizzaOptions ingredients={item.ingredients} />}
+        {item.type === "pizza" && (
+          <PizzaOptions ingredients={item.ingredients} />
+        )}
         {item.type === "sushi" && <SushiOptions />}
 
-        <ProductModalFooter item={item}/>
+        <ProductModalFooter item={item} />
       </div>
     </>
   );

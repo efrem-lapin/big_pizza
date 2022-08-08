@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "../UI/Icon";
 import IngredientsIcons from "../../services/IngredientsIcons";
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux/es/exports";
 import { toggleIngredient, initIngredient } from "../../store/slices/ingredientsProdSlice";
 
 const IngredientItem = ({ item }) => {

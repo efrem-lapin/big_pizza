@@ -9,9 +9,6 @@ import AccountPage from "./pages/AccountPage";
 import Cart from "./components/Cart/Cart";
 import PopupList from "./components/PopupList/PopupList";
 
-import "./App.scss";
-import Popup from "./components/Popup/Popup";
-
 const App = () => {
     return (
     <div className="App">

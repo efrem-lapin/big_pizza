@@ -55,7 +55,7 @@ const ProductModal = ({ item, close }) => {
         )}
         {item.type === "sushi" && <SushiOptions />}
 
-        <ProductModalFooter item={item} />
+        <ProductModalFooter item={item} close={close} />
       </div>
     </>
   );

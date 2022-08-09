@@ -41,14 +41,14 @@ export const cartSlice = createSlice({
       //   state.list.push({ ...action.payload, idItemCart, count: 1 });
       // }
 
-      state.list.map(item => {
-        if (item.id === action.payload.id) {
-          if (JSON.stringify(item) === JSON.stringify(action.payload)) {
-            // idItemCart разный, плюс COUNT разный, это нужно как то решить
-          }
-        }
-      })
+      // state.list.map(item => {
+      //   if (item.id === action.payload.id) {
+      //     if (JSON.stringify(item) === JSON.stringify(action.payload)) {
+      //       // idItemCart разный, плюс COUNT разный, это нужно как то решить
+      //     }
+      //   }
 
+      state.list.push(action.payload);
       calcSum(state);
     },
 

@@ -7,22 +7,26 @@ import { setProd, calcSum } from "../../store/slices/prodOptionsSlice";
 import "./ProductOptions.scss";
 
 const ProductOptions = ({ options }) => {
-  // const dispatch = useDispatch();
-  // function setValue(e, item) {
-  //   if (e.target.checked) dispatch(setOptions({ [item.name]: item.value }));
-  //   dispatch(calcSum());
-  // }
-
+  const dispatch = useDispatch();
   const [value, setValue] = useState(0);
+
+  React.useEffect(() => {
+    dispatch(setOptions({[options[0].name]: options[0].value}));
+  }, []);
+
+  const getValue = ({name, value}, index) => {
+    setValue(index);
+    dispatch(setOptions({[name]: value}));
+  }
 
   return (
     <div className="options_list">
       {options.map((option, i) => (
         <button
           className={i === value ? "options_item option_active" : "options_item"}
-          onClick={() => setValue(i)}
+          onClick={() => getValue(option, i)}
         >
-          {option.title}
+          {option.value}
         </button>
       ))}
     </div>

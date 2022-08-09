@@ -4,25 +4,29 @@ import { addProduct } from "../../store/slices/cartSlice";
 
 import "./ProductModalFooter.scss";
 
-const ProductModalFooter = ({item}) => {
+const ProductModalFooter = ({item, close}) => {
   const dispatch = useDispatch();
   const extras = useSelector(state => state.extrasProd.list);
   const extrasSum = useSelector(state => state.extrasProd.sum);
-  const ingredients = useSelector(state => state.ingredientsProd.list);
-  // const size = useSelector(state => state.sizeProd.list);
-  // const sizeSum = useSelector((state) => state.prodOptions.sum);
+  const ingredients = useSelector(state => state.ingredientsProd.list) || null;
+  const options = useSelector(state => state.prodOptions.list);
+  const optionsSum = useSelector((state) => state.prodOptions.sum);
+  
 
-  const sum = extrasSum; // + sizeSum
+  const sum = extrasSum + optionsSum;
 
   function addProdCart() {
     const product = {
       ...item,
       extras,
       ingredients,
-      sum
+      options,
+      sum,
+      count: 1
     };
 
-    dispatch(addProdCart(product));
+    dispatch(addProduct(product));
+    close();
   }
 
   return (

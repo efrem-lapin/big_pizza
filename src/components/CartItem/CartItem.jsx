@@ -15,45 +15,41 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const Icons = new IngredientsIcons();
 
-  // if (item.count < 1) {
-  //   dispatch(removeProduct(item.idItemCart));
-  // }
-
-  function addCount(idItemCart) {
-    dispatch(recount({id: idItemCart, increment: true}));
+  function addCount(id) {
+    dispatch(recount({id, increment: true}));
   }
 
-  function removeCount(idItemCart) {
-    dispatch(recount({id: idItemCart}));
+  function removeCount(id) {
+    dispatch(recount({id}));
   }
 
   return (
     <li className="cart_item">
-      {item.extras ? (
+      {item.product.extras ? (
         <div className="ex_list">
-          {item.extras.map((ex) => (
-            <div className="ex_item">{Icons.getIcon(ex.icon)}</div>
+          {item.product.extras.map((ex) => (
+            <div className="ex_item" key={ex.id}>{Icons.getIcon(ex.icon)}</div>
           ))}
         </div>
         
       ) : null}
-      <img className="cart_item_img" src={item.img} alt="cart_img" />
+      <img className="cart_item_img" src={item.product.img} alt="cart_img" />
       <div className="cart_item_info">
         <div className="cart_item_text">
-          <h3 className="cart_item_title">{item.name}</h3>
-          <p className="cart_item_options">{item.descr}</p>
+          <h3 className="cart_item_title">{item.product.name}</h3>
+          <p className="cart_item_options">{item.product.descr}</p>
           {item.weigth && <div className="cart_item_weigth">{item.weigth} гр</div>}
         </div>
         <div className="cart_item_amount">
           <div className="cart_item_counter">
             <div
               className="cart_counter_btn"
-              onClick={() => removeCount(item.idItemCart)}
+              onClick={() => removeCount(item.id)}
             >
               -
             </div>
             <div className="cart_counter_btn">{item.count}</div>
-            <div className="cart_counter_btn" onClick={() => addCount(item.idItemCart)}>
+            <div className="cart_counter_btn" onClick={() => addCount(item.id)}>
               +
             </div>
           </div>

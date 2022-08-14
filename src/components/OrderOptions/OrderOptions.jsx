@@ -1,28 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import { useDispatch} from "react-redux";
 import { setOptions } from "../../store/slices/orderSlice";
 
-const OrderOptions = ({ items }) => {
+const OrderOptions = ({ options }) => {
   const dispatch = useDispatch();
 
-  function setValue(e, name, value) {
-    if (e.target.checked) dispatch(setOptions({ name, value }));
+  const [value, setValue] = useState(0);
+
+  React.useEffect(() => {
+    dispatch(setOptions({[options[0].name]: options[0].value}));
+  }, []);
+
+  const getValue = ({name, value}, index) => {
+    setValue(index);
+    dispatch(setOptions({[name]: value}));
   }
 
   return (
     <div className="options_list">
-      {items.map((item) => (
-        <div className="options_item" key={item.id}>
-          <label>
-            <input
-              type="radio"
-              name={item.name}
-              value={item.value}
-              defaultChecked={item.checked}
-              onClick={(e) => setValue(e, item.name, item.value)}
-            />
-            <span>{item.label}</span>
-          </label>
+      {options.map((option, i) => (
+          <div
+          key={option.id}
+          className={i === value ? "options_item option_active" : "options_item"}
+          onClick={() => getValue(option, i)}
+        >
+          {option.value}
         </div>
       ))}
     </div>

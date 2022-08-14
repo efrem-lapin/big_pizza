@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   sum: 0,
-  devilery: true,
+  devilery: "Доставка",
   products: [],
   customer: {
     name: '',
@@ -10,9 +10,9 @@ const initialState = {
     mail: ''
   },
   addres: {},
-  time: "",
-  payment: "",
-  change: false,
+  speed: "fast",
+  payment: "cash",
+  change: "no_change",
   restaurant: "",
   comment: ""
 };
@@ -22,10 +22,9 @@ export const orderSlice = createSlice({
   initialState,
   reducers: {
     setOptions: (state, actions) => {
-      const name = actions.payload.name;
-      state[name] = actions.payload.value;
-
-      console.log(actions.payload.name)
+      for (let i in actions.payload) {
+        state[i] = actions.payload[i];
+      }
     },
 
     setCustomer: (state, actions) => {

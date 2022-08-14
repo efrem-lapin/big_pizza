@@ -9,7 +9,7 @@ const PopupList = () => {
   return (
     <ul className="popup_list">
       {items.map((item) => (
-        <Popup text={item.text} key={item.id}/>
+        <Popup key={item.id} text={item.text}/>
       ))}
     </ul>
   );

@@ -8,8 +8,10 @@ const initialState = {
 
 // Ф-ЦИЯ ДЛЯ ПОДСЧЕТА СУММЫ ВСЕХ ТОВАРОВ
 const calcSum = (state) => {
-  state.sum = state.list.reduce((prev, item) => prev + (item.sum || item.price) * item.count, 0);
+  state.sum = state.list.reduce((prev, item) => prev + (item.product.sum || item.product.price) * item.count, 0);
 }
+
+// {idCartItem: string, product: {}, count: 0}
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -21,34 +23,18 @@ export const cartSlice = createSlice({
     },
 
     addProduct: (state, action) => {
-      // const index = state.list.findIndex(item => item.id === action.payload.id);
+      // ИЩЕМ ПОХОЖИЙ ТОВАР В КОРЗИНЕ
+      const newProd = action.payload;
+      const index = state.list.findIndex((item => JSON.stringify(item.product) == JSON.stringify(newProd)));
 
-      // ЕСЛИ ТОВАР УЖЕ ЕСТЬ В КОРЗИНЕ, ТОГДА УВЕЛИЧИВАЕМ ЕГО КОЛЛИЧЕСТВО
-      // if (index > -1) {
-      //   // const isSimilar = JSON.stringify(state.list[index]) === JSON.stringify(action.payload);
-      //   state.list.map(item => {
-      //     if (item.id === state.list[index].id) {
-      //       const isSimilar = JSON.stringify(state.list[index]) === JSON.stringify(item);
-      //       if (isSimilar) {
-      //         return item.count++;
-      //       }
-      //     }
-      //   })
-      //   // if (isSimilar) state.list[index].count++;
-      // } else  {
-      //   // ИНАЧЕ ГЕНЕРИРУЕМ ИНДИФИКАТОР, УСТАНАВЛИВАЕМ КОЛ-ВО ТОВАРА И ДОБАВЛЯЕМ В КОРЗИНУ
-      //   const idItemCart = Math.random();
-      //   state.list.push({ ...action.payload, idItemCart, count: 1 });
-      // }
+      // ЕСЛИ ТОВАР УЖЕ ЕСТЬ В КОРЗИНЕ, ТО УВЕЛИЧИВАЕМ ЕГО КОЛ-ВО,
+      // ИНАЧЕ СОЗДАЕМ НОВЫЙ ТОВАР: ПРИСВАИВАЕМ ID И УКАЗЫВАЕМ КОЛ-ВО ТОВАРА РАВНОЕ 1
+      if (index !== -1) {
+        state.list[index].count++;
+      } else {
+        state.list.push({id: `cartItem${Math.random()}`, count: 1, product: newProd});
+      }
 
-      // state.list.map(item => {
-      //   if (item.id === action.payload.id) {
-      //     if (JSON.stringify(item) === JSON.stringify(action.payload)) {
-      //       // idItemCart разный, плюс COUNT разный, это нужно как то решить
-      //     }
-      //   }
-
-      state.list.push(action.payload);
       calcSum(state);
     },
 
@@ -60,11 +46,14 @@ export const cartSlice = createSlice({
     },
 
     recount: (state, action) => {
-      // ИНКРЕМЕНТ ИЛИ ДЕКРЕМЕНТ КОЛ-ВА ТОВАРА
-      const index = state.list.findIndex(item => item.idItemCart === action.payload.id);
+      // ИНКРЕМЕНТ И ДЕКРЕМЕНТ КОЛ-ВА ТОВАРА
+      const index = state.list.findIndex(item => item.id === action.payload.id);
 
       if (action.payload.increment) state.list[index].count++;
-      else state.list[index].count--;
+      else {
+        if (state.list[index].count <= 1) state.list.splice(index, 1);
+        else state.list[index].count--;
+      }
 
       calcSum(state);
     },

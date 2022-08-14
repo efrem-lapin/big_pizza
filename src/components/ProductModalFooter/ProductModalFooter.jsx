@@ -22,7 +22,6 @@ const ProductModalFooter = ({item, close}) => {
       ingredients,
       options,
       sum,
-      count: 1
     };
 
     dispatch(addProduct(product));

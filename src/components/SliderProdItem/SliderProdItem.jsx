@@ -11,7 +11,7 @@ const SliderProdItem = ({ item }) => {
 
   function add() {
     dispatch(addProduct(item));
-    dispatch(addPopup({text: "Товар добавлен!"}));
+    dispatch(addPopup({text: "Товар добавлен!", id: item.id + Math.random()}));
 
     setTimeout(() => {
       dispatch(removePopup())

@@ -19,7 +19,7 @@ const OrderCustomer = () => {
 
   return (
     <OrderSection title="О вас">
-     {options.map(item => <InputLabel {...item} callback={setValue}/>)}
+     {options.map(item => <InputLabel key={item.id} {...item} callback={setValue}/>)}
     </OrderSection>
   );
 };

@@ -23,6 +23,7 @@ const ProductOptions = ({ options }) => {
     <div className="options_list">
       {options.map((option, i) => (
         <button
+          key={option.id}
           className={i === value ? "options_item option_active" : "options_item"}
           onClick={() => getValue(option, i)}
         >

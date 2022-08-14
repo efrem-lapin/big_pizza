@@ -1,57 +1,12 @@
 import OrderTime from "../OrderTime/OrderTime";
-import React, { useState } from "react";
-import InputLabel from "../UI/InputLabel";
+import React from "react";
 import RadioList from "../RadioList/RadioList";
-import InputList from "../InputList/InputList";
 import { useSelector } from "react-redux";
 import OrderOptions from "../OrderOptions/OrderOptions";
 import OrderAdress from "../OrderAdress/OrderAdress";
 import RestaurantList from "../RestaurantList/RestaurantList";
-import OrderSection from "../OrderSection/OrderSection";
 
 const OrderDevilery = () => {
-  const listInput = [
-    {
-      label: "Дом",
-      type: "text",
-      name: "house",
-      placeholder: "1а",
-      id: "input2",
-    },
-
-    {
-      label: "Подъезд*",
-      type: "text",
-      name: "house",
-      placeholder: "1",
-      id: "input3",
-    },
-
-    {
-      label: "Квартира",
-      type: "text",
-      name: "flat",
-      placeholder: "2",
-      id: "input4",
-    },
-
-    {
-      label: "Этаж",
-      type: "text",
-      name: "floor",
-      placeholder: "3",
-      id: "input6",
-    },
-
-    {
-      label: "Домофон",
-      type: "text",
-      name: "intercom",
-      placeholder: "0000",
-      id: "input7",
-    },
-  ];
-
   const listOne = [
     {
       id: "speed1",
@@ -72,34 +27,29 @@ const OrderDevilery = () => {
     {
       id: "devi",
       name: "devilery",
-      label: "Доставка",
-      value: true,
-      checked: true,
+      value: "Доставка",
     },
     {
       id: "nondevi",
       name: "devilery",
-      label: "Самовывоз",
-      value: false,
+      value: "Самовывоз",
     },
   ];
-  const [speed, setSpeed] = useState("fast");
-
+  const speed = useSelector(state => state.order.speed);
   const devilery = useSelector((state) => state.order.devilery);
-  const time = useSelector(state => state.order.time);
 
   return (
     <div className="order_section">
       <div className="order_section_head">
         <h2 className="form_title">Доставка</h2>
-        <OrderOptions items={prodOptions} />
+        <OrderOptions options={prodOptions} />
       </div>
       {devilery ? <OrderAdress /> : <RestaurantList />}
       <div className="form_radio_wrapper">
         <p className="form_subtitle">Когда выполнить заказ?</p>
         <div className="form_radio_dev">
-          <RadioList items={listOne} callback={setSpeed} />
-          {time && <OrderTime />}
+          <RadioList items={listOne}/>
+          {speed === 'time' && <OrderTime />}
         </div>
       </div>
     </div>

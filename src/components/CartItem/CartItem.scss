@@ -1,3 +1,8 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+
 .cart_item {
   position: relative;
   display: flex;
@@ -28,7 +33,7 @@
   position: absolute;
   top: 0;
   left: 0px;
-  background-color: #ffeee2;
+  background-color: $primary-light;
   padding: 4px;
 }
 
@@ -98,7 +103,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: #ff7010;
+  color: $primary;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -129,7 +134,7 @@
 }
 
 .cart_item_counter {
-  background-color: #ffeee2;
+  background-color: $primary-light;
   border-radius: 6px;
   user-select: none;
   overflow: hidden;
@@ -143,7 +148,7 @@
 .cart_counter_btn {
   padding: 8px;
   transition-duration: 0.3s;
-  color: #ff7010;
+  color: $primary;
 
   &:nth-child(odd):hover {
     background-color: darken(#ffeee2, 10);

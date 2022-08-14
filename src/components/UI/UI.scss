@@ -36,8 +36,8 @@
 
 .input_panel {
   padding: 13px 16px;
-  background: #ffffff;
-  border: 1px solid #f0f0f0;
+  background: $white;
+  border: 1px solid $gray-line;
   border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
@@ -48,7 +48,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #a5a5a5;
+  color: $gray-text;
   margin-bottom: 8px;
 }
 

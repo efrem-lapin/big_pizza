@@ -1,6 +1,8 @@
+@import "../../scss/vars.scss";
+
 .time_range {
   position: absolute;
-  background-color: #fff;
+  background-color: $white;
   z-index: 1;
   width: 100%;
   max-height: 300px;
@@ -13,10 +15,10 @@
   cursor: pointer;
 
   &:hover {
-    background-color: darken($color: #fff, $amount: 8)
+    background-color: darken($color: $white, $amount: 8)
   }
 }
 
 .time_selected {
-  background-color: #444;
+  background-color: $gray-text;
 }

@@ -1,9 +1,11 @@
+@import "../../scss/vars.scss";
+
 .order_info_title,
 .order_info_more {
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #a5a5a5;
+  color: $gray-text;
 }
 
 .order_info {

@@ -5,7 +5,7 @@
 .product_item {
   position: relative;
   width: 300px;
-  background: #ffffff;
+  background: $white;
   border: 1px solid #f0f0f0;
   border-radius: 12px;
   overflow: hidden;
@@ -86,7 +86,6 @@
 .product_text {
   display: flex;
   flex-direction: column;
-  // height: 80px;
   margin-bottom: 16px;
   overflow: hidden;
 }

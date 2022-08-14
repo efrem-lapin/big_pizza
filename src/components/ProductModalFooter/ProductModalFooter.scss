@@ -1,3 +1,5 @@
+@import "../../scss/vars.scss";
+
 .product_footer {
   display: flex;
   justify-content: space-between;
@@ -19,7 +21,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #ff7010;
+  color: $primary;
   margin-right: 12px;
 
   @media (max-width: 768px) {
@@ -31,6 +33,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #a5a5a5;
+  color: $gray-text;
   margin-right: 20px;
 }

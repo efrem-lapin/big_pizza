@@ -1,17 +1,19 @@
+@import "../../scss/vars.scss";
+
 .filter_item {
     input {
         display: none;
     }
 
     input:checked + span {
-        background-color: #FF7010;
-        color: #ffffff;
+        background-color: $primary;
+        color: $white;
     }
 
     span {
         display: inline-block;
         padding: 11px 20px;
-        background-color: #F0F0F0;
+        background-color: $gray-line;
         border-radius: 6px;
         cursor: pointer;
         user-select: none;

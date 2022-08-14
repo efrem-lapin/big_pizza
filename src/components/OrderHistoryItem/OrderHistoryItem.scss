@@ -1,7 +1,9 @@
+@import "../../scss/vars.scss";
+
 .order_history_item {
   padding: 16px 20px 20px;
-  background-color: #fff;
-  border: 1px solid #f0f0f0;
+  background-color: $white;
+  border: 1px solid $gray-line;
   border-radius: 12px;
   width: 100%;
   margin-bottom: 20px;
@@ -29,7 +31,7 @@
 .rect {
   width: 4px;
   height: 44px;
-  background-color: #e23535;
+  background-color: $red;
   border-radius: 24px;
   margin-right: 16px;
 
@@ -71,7 +73,7 @@
     }
 
     path {
-      fill: #ff7010;
+      fill: $primary;
     }
   }
 }
@@ -96,7 +98,7 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 50%;
   overflow: hidden;
   margin-right: -10px;
@@ -110,7 +112,7 @@
 .hr {
   margin: 16px 0px 12px;
   border: 0;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $white;
 }
 
 .order_history_pizza {
@@ -125,7 +127,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #ff7010;
+  color: $primary;
   cursor: pointer;
 }
 

@@ -1,7 +1,7 @@
+@import "../../scss/vars.scss";
+
 .slider_item {
-  background-color: #fff;
-  // min-width: 190px;
-  background-color: #fff;
+  background-color: $white;
 
   &:not(:last-child) {
     margin-right: 20px;
@@ -12,8 +12,8 @@
 
     @media (max-width: 768px) {
       padding: 6px 15px;
-      background-color: #ff701030;
-      color: #ff7010;
+      background-color: $primary-30;
+      color: $primary;
       font-weight: 700;
     }
   }

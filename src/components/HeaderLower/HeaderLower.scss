@@ -27,7 +27,7 @@
 .burger_line {
   width: 32px;
   height: 1.8px;
-  background-color: #191919;
+  background-color: $black;
   border-radius: 1px;
 
   &:not(:last-child) {

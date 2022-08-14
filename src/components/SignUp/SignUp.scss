@@ -1,3 +1,5 @@
+@import "../../scss/vars.scss";
+
 .sign_up_wrapper {
   margin: 0 auto;
   width: 320px;
@@ -44,7 +46,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  // gap: 16px;
   margin-bottom: 12px;
 
   button {
@@ -64,7 +65,7 @@
   opacity: 0.4;
 
   span {
-    color: #000000;
+    color: $black;
   }
 
   @media (max-width: 360px) {
@@ -79,7 +80,7 @@
 .input_conf {
   width: 48px;
   height: 48px;
-  border: 1px solid #F0F0F0;
+  border: 1px solid $gray-line;
   border-radius: 6px;
   font-size: 16px;
   text-align: center;

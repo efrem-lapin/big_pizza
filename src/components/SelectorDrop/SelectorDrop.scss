@@ -1,5 +1,7 @@
+@import "../../scss/vars.scss";
+
 .selector_item {
   padding: 16px 8px;
-  background-color: #fff;
-  border-bottom: 1px solid gray;
+  background-color: $white;
+  border-bottom: 1px solid $gray-text;
 }

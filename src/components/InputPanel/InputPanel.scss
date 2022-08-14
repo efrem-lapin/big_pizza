@@ -1,8 +1,10 @@
+@import "../../scss/vars.scss";
+
 .input_panel_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #f0f0f0;
+  border: 1px solid $gray-line;
   border-radius: 8px;
 
   .icon {

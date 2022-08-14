@@ -1,6 +1,8 @@
+@import "../../scss/vars.scss";
+
 .filter_section_title {
   margin-bottom: 16px;
-  color: #a5a5a5;
+  color: $gray-text;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;

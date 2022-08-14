@@ -1,3 +1,5 @@
+@import "../../scss/vars.scss";
+
 .selector {
   position: relative;
 }
@@ -7,13 +9,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 13px 16px;
-  background-color: #fff;
+  background-color: $white;
   width: 100%;
   border-radius: 6px;
   cursor: pointer;
 
   span {
-    color: gray;
+    color: $gray-text;
   }
 
   input {
@@ -25,7 +27,7 @@
 
     svg {
       path {
-        fill: gray;
+        fill: $gray-text;
       }
     }
   }

@@ -16,14 +16,14 @@
   align-items: center;
   width: 105px;
   height: 105px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid $gray-line;
   border-radius: 12px;
   cursor: pointer;
   margin-bottom: 8px;
 
   .ingredient_icon {
     path {
-      fill: #f0f0f0;
+      fill: $gray-line;
     }
   }
 
@@ -75,7 +75,7 @@
   }
 
   input:checked + .ingredient_box {
-    border: 1px solid #ff7010;
+    border: 1px solid $primary;
 
     &::after {
       content: "";
@@ -85,7 +85,7 @@
       display: block;
       width: 16px;
       height: 16px;
-      border: 1px solid #ff7010;
+      border: 1px solid $primary;
       border-radius: 50%;
 
       @media (max-width: 1024px) {
@@ -104,8 +104,8 @@
       display: block;
       width: 8px;
       height: 6px;
-      border-left: 1px solid #ff7010;
-      border-bottom: 1px solid #ff7010;
+      border-left: 1px solid $primary;
+      border-bottom: 1px solid $primary;
       transform: rotate(-45deg);
 
       @media (max-width: 1024px) {
@@ -118,7 +118,7 @@
 
     .ingredient_icon {
       path {
-        fill: #ff7010;
+        fill: $primary;
       }
     }
 
@@ -147,5 +147,5 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  color: #ff7010;
+  color: $primary;
 }

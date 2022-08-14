@@ -19,7 +19,7 @@ body {
   &::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-    background-color: #ececec;
+    background-color: $primary-light;
     border-radius: 9em;
 
     @media (max-width: 425px) {
@@ -29,12 +29,12 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #ff701050;
+    background-color: lighten($primary, 15);
     border-radius: 9em;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: #ff701080;
+    background-color: lighten($primary, 0);
   }
 }
 
@@ -165,8 +165,8 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background-color: #fff;
-  border: 1px solid #f0f0f0;
+  background-color: $white;
+  border: 1px solid $gray-line;
   border-radius: 8px;
   margin-bottom: 24px;
 

@@ -1,3 +1,7 @@
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+@import "../../scss/desctop.scss";
+
 .contacts_list {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@
   }
 
   a:hover {
-    color: #ff7010;
+    color: $primary;
   }
 
   li {

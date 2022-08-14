@@ -1,3 +1,5 @@
+@import "../../scss/vars.scss";
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -18,11 +20,11 @@
   user-select: none;
   width: 48px;
   height: 48px;
-  background-color: #fff;
+  background-color: $white;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid $gray-line;
 
   &:not(:nth-child(4)) {
     cursor: pointer;
@@ -40,7 +42,7 @@
   align-items: center;
   height: 48px;
   width: 48px;
-  background-color: #ff7010;
+  background-color: $primary;
   border-radius: 6px;
   user-select: none;
   cursor: pointer;
@@ -58,7 +60,7 @@
     height: 18px;
     width: 18px;
     path {
-      fill: #fff;
+      fill: $white;
     }
   }
 }

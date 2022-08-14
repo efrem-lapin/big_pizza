@@ -1,3 +1,8 @@
+@import "../../scss/extends.scss";
+@import "../../scss/vars.scss";
+@import "../../scss/desctop.scss";
+
+
 .account_setting {
   animation: show 0.3s ease;
 }
@@ -69,7 +74,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #ff7010;
+  color: $primary;
   user-select: none;
   cursor: pointer;
 }

@@ -1,8 +1,10 @@
+@import "../../scss/vars.scss";
+
 .options_list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #f0f0f0;
+  border: 1px solid $gray-line;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -25,6 +27,6 @@
 }
 
 .option_active {
-  background-color: #ff7010;
-  color: #fff;
+  background-color: $primary;
+  color: $white;
 }

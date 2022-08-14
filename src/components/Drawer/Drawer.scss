@@ -1,3 +1,7 @@
+@import "../../scss/vars.scss";
+@import "../../scss/extends.scss";
+@import "../../scss/desctop.scss";
+
 .overlay {
   z-index: 11;
   position: fixed;
@@ -21,7 +25,7 @@
   padding: 32px 20px 12px 20px;
   width: 420px;
   height: 100vh;
-  background-color: white;
+  background-color: $white;
   
   @media (max-width: 1440px) {
     width: 350px;
@@ -61,7 +65,7 @@
   cursor: pointer;
 
   path {
-    fill: gray;
+    fill: $red;
   }
 
   .icon {
@@ -100,9 +104,9 @@
 .drawer_button {
   padding: 13px 58px;
   border-radius: 6px;
-  border: 1px solid #ff7010;
-  color: #ff7010;
-  background-color: #fff;
+  border: 1px solid $primary;
+  color: $primary;
+  background-color: $white;
   cursor: pointer;
   transition: 0.3s;
 
@@ -121,7 +125,7 @@
 }
 
 .drawer_cart_sum {
-  color: #ff7010;
+  color: $primary;
   display: block;
   font-weight: 600;
   font-size: 20px;
@@ -133,11 +137,11 @@
 }
 
 .done {
-  background-color: #ff7010;
-  color: #fff;
+  background-color: $primary;
+  color: $white;
 
   &:hover {
-    background-color: darken(#ff7010, 4);
+    background-color: darken($primary, 4);
   }
 }
 

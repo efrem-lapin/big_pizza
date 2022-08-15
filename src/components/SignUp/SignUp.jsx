@@ -31,8 +31,6 @@ const SignUp = ({ close }) => {
       if (event.target.value.length >= 1)
         event.target.nextElementSibling.focus();
     }
-
-    console.log(code)
   }
 
   function sign() {

@@ -4,8 +4,7 @@ import { useSelector } from "react-redux/es/exports";
 import "./OrderFooter.scss";
 
 const OrderFooter = ({ path }) => {
-  const cart = useSelector((state) => state.cart.list);
-  const sum = cart.length && cart.reduce((sum, item) => sum + item.price * item.count, 0);
+  const sum = useSelector((state) => state.cart.sum);
 
   return (
     <div className="form_footer">

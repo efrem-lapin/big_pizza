@@ -27,9 +27,9 @@ const Footer = () => {
           <ul className="footer_list">
             <div className="footer_box sb">
               <Logo />
-              <span className="copyright">© Copyright 2021 — Куда Пицца</span>
+              <span className="copyright">© Copyright 2021 — BIG Пицца</span>
             </div>
-            <FooterNav title="Куда Пицца" items={listFirst} />
+            <FooterNav title="BIG Пицца" items={listFirst} />
             <FooterNav title="Помощь" items={listSecond} />
             <ContactsList />
           </ul>

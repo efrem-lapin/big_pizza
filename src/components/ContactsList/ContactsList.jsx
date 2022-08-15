@@ -17,7 +17,7 @@ const ContactsList = () => {
         <li className="contacts_item">
           <Icon name="marker" />
           <a className="contacts_link" href="local:89262231011">
-            Москва, ул. Юных Ленинцев, д.99
+            Москва, ул. Московская, д.99
           </a>
         </li>
         <li className="contacts_item">

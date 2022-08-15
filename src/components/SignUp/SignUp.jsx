@@ -10,8 +10,30 @@ import "./SignUp.scss";
 
 const SignUp = ({ close }) => {
   const [conf, setConf] = useState(false);
+  const [code, setCode] = useState([]);
   const dispatch = useDispatch();
-  const active = useSelector(state => state.menuMobile.active);
+  const active = useSelector((state) => state.menuMobile.active);
+
+  function setDigit(event) {
+    if (event.target.value.length > 0 && event.target.value !== "") {
+      const dig = event.target.value.replace(/\d [0-9]/dgi, "");
+      setCode((prev) => [...prev, dig]);
+    } else {
+      setCode((prev) => prev.slice(0, -1));
+    }
+
+    if (code.length < 3) {
+      if (event.target.value.length >= 1)
+        event.target.nextElementSibling.focus();
+    }
+
+    if (code.length < 3) {
+      if (event.target.value.length >= 1)
+        event.target.nextElementSibling.focus();
+    }
+
+    console.log(code)
+  }
 
   function sign() {
     dispatch(setActive(false));
@@ -37,13 +59,33 @@ const SignUp = ({ close }) => {
         {conf ? (
           <>
             <div className="sign_conf">
-              <input className="input_conf" placeholder="X" />
-              <input className="input_conf" placeholder="X" />
-              <input className="input_conf" placeholder="X" />
-              <input className="input_conf" placeholder="X" />
+              <input
+                className="input_conf"
+                placeholder="X"
+                onChange={setDigit}
+                value={code[0]}
+              />
+              <input
+                className="input_conf"
+                placeholder="X"
+                onChange={setDigit}
+                value={code[1]}
+              />
+              <input
+                className="input_conf"
+                placeholder="X"
+                onChange={setDigit}
+                value={code[2]}
+              />
+              <input
+                className="input_conf"
+                placeholder="X"
+                onChange={setDigit}
+                value={code[3]}
+              />
             </div>
             <Link className="sign_btn" to="/account" onClick={close}>
-              <Button text="Войти" onClick={sign}/>
+              <Button text="Войти" onClick={sign} />
             </Link>
           </>
         ) : (

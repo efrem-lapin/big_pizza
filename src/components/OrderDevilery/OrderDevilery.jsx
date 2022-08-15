@@ -44,7 +44,7 @@ const OrderDevilery = () => {
         <h2 className="form_title">Доставка</h2>
         <OrderOptions options={prodOptions} />
       </div>
-      {devilery ? <OrderAdress /> : <RestaurantList />}
+      {devilery === "Доставка" ? <OrderAdress /> : <RestaurantList />}
       <div className="form_radio_wrapper">
         <p className="form_subtitle">Когда выполнить заказ?</p>
         <div className="form_radio_dev">

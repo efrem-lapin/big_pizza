@@ -2,6 +2,11 @@
   display: flex;
   margin: 0 auto;
 
+  .product_label {
+    width: 65px;
+    padding: 7px 16px;
+  }
+
   @media (max-width: 1100px) {
     flex-direction: column-reverse;
     align-items: center;
@@ -48,10 +53,14 @@
   @media (max-width: 1100px) {
     &::before {
       position: absolute;
-      top: -50px;
+      width: 160px;
+      height: 8px;
+      border-radius: 40px;
+      background-color: #ffffff80;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
-      content: "Закрыть";
+      content: "";
       animation: rise 1s ease;
       pointer-events: none;
       color: #00000090;

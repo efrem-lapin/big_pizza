@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux/es/exports";
 
 import "./Modal.scss";
 
-const Modal = ({ children, close, addClass = "" }) => {
+const Modal = ({ children, close, addClass = "", prodModal }) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
   const timer = (React.useRef().current = () => {
@@ -24,7 +24,7 @@ const Modal = ({ children, close, addClass = "" }) => {
   }
 
   return (
-    <Overlay closeDrawer={closeModal}>
+    <Overlay closeDrawer={closeModal} prodModal={prodModal}>
       <div
         className={
           open ? "modal_wrapper  modal_active" : "modal_wrapper modal_deactive"

@@ -21,8 +21,13 @@ export const extrasProdSlice = createSlice({
 
       state.sum = state.list.reduce((i, item) => item.price + i, 0);
     },
+
+    resetExtras: (state, actions) => {
+      state.list = [];
+      state.sum = 0;
+    }
   },
 });
 
-export const { toggleExtras } = extrasProdSlice.actions;
+export const { toggleExtras, resetExtras } = extrasProdSlice.actions;
 export default extrasProdSlice.reducer;

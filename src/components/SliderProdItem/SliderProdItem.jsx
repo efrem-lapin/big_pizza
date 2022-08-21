@@ -6,7 +6,7 @@ import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 import "./SliderProdItem.scss";
 
-const SliderProdItem = ({ item }) => {
+const SliderProdItem = React.forwardRef(({ item }, ref) => {
   const dispatch = useDispatch();
 
   function add() {
@@ -19,7 +19,7 @@ const SliderProdItem = ({ item }) => {
   }
 
   return (
-    <li className="slider_item">
+    <li className="slider_item" ref={ref}>
       <img
         src={item.img}
         alt="product"
@@ -32,6 +32,6 @@ const SliderProdItem = ({ item }) => {
       </div>
     </li>
   );
-};
+});
 
 export default SliderProdItem;

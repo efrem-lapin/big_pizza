@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
     addProduct: (state, action) => {
       // ИЩЕМ ПОХОЖИЙ ТОВАР В КОРЗИНЕ
       const newProd = action.payload;
-      const index = state.list.findIndex((item => JSON.stringify(item.product) == JSON.stringify(newProd)));
+      const index = state.list.findIndex((item => JSON.stringify(item.product) === JSON.stringify(newProd)));
 
       // ЕСЛИ ТОВАР УЖЕ ЕСТЬ В КОРЗИНЕ, ТО УВЕЛИЧИВАЕМ ЕГО КОЛ-ВО,
       // ИНАЧЕ СОЗДАЕМ НОВЫЙ ТОВАР: ПРИСВАИВАЕМ ID И УКАЗЫВАЕМ КОЛ-ВО ТОВАРА РАВНОЕ 1

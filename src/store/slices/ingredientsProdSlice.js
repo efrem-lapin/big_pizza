@@ -27,8 +27,12 @@ export const ingredientsProdSlice = createSlice({
         state.list.push(item);
       }
     },
+
+    resetIngredients: (state, actions) => {
+      state.list = [];
+    }
   },
 });
 
-export const { toggleIngredient, initIngredient } = ingredientsProdSlice.actions;
+export const { toggleIngredient, initIngredient, resetIngredients } = ingredientsProdSlice.actions;
 export default ingredientsProdSlice.reducer;

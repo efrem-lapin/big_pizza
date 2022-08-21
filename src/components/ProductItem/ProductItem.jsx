@@ -19,7 +19,7 @@ const ProductItem = ({ item }) => {
 
   return (
     <div className="wrapper">
-      {modal && <Modal addClass="modal_product" close={closeModal}><ProductModal item={item} close={closeModal}/></Modal>}
+      {modal && <Modal addClass="modal_product" close={closeModal} prodModal><ProductModal item={item} close={closeModal}/></Modal>}
       <li className="product_item" onClick={openModal}>
         {item.label ? <Label text={item.label}/> : null}
         <div className="product_wrapper_img">

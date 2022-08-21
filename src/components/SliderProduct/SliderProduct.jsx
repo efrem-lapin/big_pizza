@@ -4,18 +4,21 @@ import SliderProdItem from "../SliderProdItem/SliderProdItem";
 
 import "./SliderProduct.scss";
 
-const SliderProduct = ({ items =[] }) => {
+const SliderProduct = ({ items = [] }) => {
+  const layRef = React.useRef();
   const [current, setCurrent] = useState(0);
-  const fullWidth = 190 * (6 - 4);
+  const fullWidth = (items.length * 214 - 22) / 2;
   const end = current > -fullWidth;
 
   function movePrev() {
-    setCurrent((prev) => prev + 222);
+    setCurrent((prev) => prev + 212);
   }
 
-  function moveNext({ items }) {
-    setCurrent((prev) => prev - 222);
+  function moveNext() {
+    setCurrent((prev) => prev - 212);
   }
+
+  console.log(items.length)
 
   return (
     <div className="slider">
@@ -28,9 +31,10 @@ const SliderProduct = ({ items =[] }) => {
         <div
           className="slider_inner"
           style={{ transform: `translateX(${current}px)` }}
+          ref={(ref) => (layRef.current = ref)}
         >
           {items.map((item) => (
-            <SliderProdItem key={item.id} item={item}/>
+            <SliderProdItem key={item.id} item={item} />
           ))}
         </div>
       </ul>

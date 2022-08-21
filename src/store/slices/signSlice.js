@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isSign: false
+    isSign: false,
+    phone: null,
 }
 
 export const signSlice = createSlice({
@@ -10,9 +11,13 @@ export const signSlice = createSlice({
     reducers: {
         setSign: (state, action) => {
             state.isSign = action.payload;
+        },
+
+        setPhone: (state, actions) => {
+            state.phone = actions.payload.phone;
         }
     }
 });
 
-export const {setSign} = signSlice.actions;
+export const {setSign, setPhone} = signSlice.actions;
 export default signSlice.reducer;

@@ -4,7 +4,7 @@ import "./UI.scss";
 
 const InputLabel = ({label, placeholder, type = "text", name, callback}) => {
   function setValue(e) {
-    callback(name, e.target.value)
+    // callback(name, e.target.value)
   }
   return (
     <label className="input_label">

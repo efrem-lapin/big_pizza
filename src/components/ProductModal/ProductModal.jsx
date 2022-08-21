@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { addProduct } from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import ProductModalFooter from "../ProductModalFooter/ProductModalFooter";
@@ -8,6 +8,7 @@ import PizzaOptions from "../PizzaModal/PizzaModal";
 import { calcSum, setOptions } from "../../store/slices/prodOptionsSlice";
 import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
+
 import "./ProductModal.scss";
 import SushiOptions from "../SushiOptions/SushiOptions";
 import { useState } from "react";
@@ -15,7 +16,9 @@ import { useState } from "react";
 const ProductModal = ({ item, close }) => {
   const dispatch = useDispatch();
   const [currProd, setCurrProd] = useState();
+  const [scrollTop, setScrollTop] = useState(0);
   const productOptions = useSelector((state) => state.prodOptions);
+  const wrapRef = React.useRef();
 
   React.useEffect(() => {
     const prod = { id: item.id, price: item.price, name: item.name, descr: item.descr };

@@ -62,10 +62,15 @@ export const ProductOptions = createSlice({
 
       calcSum(state);
     },
+
+    resetOptions: (state) => {
+      state.id = null;
+      state.sum = 0;
+    }
   },
 });
 
-export const { setOptions} =
+export const { setOptions, resetOptions } =
   ProductOptions.actions;
 
 export default ProductOptions.reducer;

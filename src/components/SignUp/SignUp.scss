@@ -90,3 +90,14 @@
     margin-right: 16px;
   }
 }
+
+.border_line {
+  text-align: center;
+  cursor: pointer;
+  color: $black;
+  transition: color 0.1s;
+
+  &:hover {
+    color: $primary;
+  }
+}

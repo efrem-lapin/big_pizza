@@ -1,6 +1,9 @@
 import Button from "../UI/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../../store/slices/cartSlice";
+import { resetExtras } from "../../store/slices/extrasProdSlice";
+import { resetIngredients } from "../../store/slices/ingredientsProdSlice";
+import { resetOptions } from "../../store/slices/prodOptionsSlice";
 
 import "./ProductModalFooter.scss";
 
@@ -25,6 +28,9 @@ const ProductModalFooter = ({item, close}) => {
     };
 
     dispatch(addProduct(product));
+    dispatch(resetExtras());
+    dispatch(resetIngredients());
+    dispatch(resetOptions());
     close();
   }
 

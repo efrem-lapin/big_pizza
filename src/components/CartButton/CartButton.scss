@@ -1,9 +1,33 @@
+@import "../../scss/vars.scss";
+
 .cart {
   display: flex;
-}
 
-.cart_btn_none {
   @media (max-width: 768px) {
-    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0px 0px 16px -8px rgba(34, 60, 80, 0.16);
+    border: 2px solid $primary;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+    
+    path {
+      fill: $primary;
+    }
+
+    .icon {
+      padding-right: 4px;
+    }
+
+    span {
+      display: none;
+    }
   }
 }

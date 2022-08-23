@@ -28,7 +28,6 @@ const MenuMobile = () => {
           : `menu_mobile menu_mobile_deactive ${clazz}`
       }
     >
-      <CartButton/>
       <SignUpPanel />
       <Menu />
     </div>

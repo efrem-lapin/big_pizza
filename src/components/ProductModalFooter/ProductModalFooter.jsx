@@ -38,7 +38,7 @@ const ProductModalFooter = ({item, close}) => {
     <div className="product_footer">
       <div className="total">
         <div className="total_sum">Итого: {sum} ₽</div>
-        <div className="total_weight">{0} г</div>
+        <div className="total_weight">{item.weigth} г</div>
       </div>
       <Button text="Добавить" click={addProdCart} />
     </div>

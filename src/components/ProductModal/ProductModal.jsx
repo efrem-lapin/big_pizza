@@ -52,7 +52,7 @@ const ProductModal = ({ item, close }) => {
           descr={item.descr}
         />
 
-        {/* В ЗАВИСИМОСТИ ОТ ТИПА ПРОДУКТА ВЫВОДИМ ОПЦИИ*/}
+        {/* В ЗАВИСИМОСТИ ОТ ТИПА ПРОДУКТА ВЫВОДИМ ОПЦИИ */}
         {item.type === "pizza" && (
           <PizzaOptions ingredients={item.ingredients} />
         )}

@@ -9,6 +9,7 @@ import "./CartButton.scss";
 const CartButton = ({hidden}) => {
   const dispatch = useDispatch();
   const sum = useSelector((state) => state.cart.sum);
+  const cart = useSelector(state => state.cart.list)
 
   function openCart() {
     dispatch(setIsCart(true));
@@ -16,6 +17,7 @@ const CartButton = ({hidden}) => {
   }
   return (
     <div className={hidden ? "cart cart_btn_none" : "cart"} onClick={openCart}>
+      {cart.length ? <div className="burger_circle">{cart.length}</div> : null}
       <Icon name="shopingBug" />
       <span className="cart_sum">{sum} ₽</span>
     </div>

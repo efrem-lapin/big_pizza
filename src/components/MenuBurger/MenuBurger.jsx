@@ -15,7 +15,6 @@ const MenuBurger = () => {
 
   return (
     <>
-      {cart.length ? <div className="burger_circle">{cart.length}</div> : null}
       <div
         className={active ? "menu_burger burger_active" : "menu_burger"}
         onClick={toggle}

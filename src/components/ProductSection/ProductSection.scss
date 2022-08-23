@@ -11,6 +11,11 @@
 
 .section_title {
   @extend %desc-h1;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
 
 .filters {

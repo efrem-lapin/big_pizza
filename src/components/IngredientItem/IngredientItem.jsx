@@ -13,7 +13,7 @@ const IngredientItem = ({ item }) => {
   }, [])
 
   function toggle() {
-    dispatch(toggleIngredient(item));
+    dispatch(toggleIngredient(item.id));
   }
 
   return (

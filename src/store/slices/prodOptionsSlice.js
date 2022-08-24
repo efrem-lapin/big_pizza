@@ -1,15 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  id: null,
-  sum: 0,
+  list: {},
+  type: null,
+  sum: 0
 };
 
 const calcSum = (state) => {
   let sum = state.price;
 
   if (state.type === "sushi") {
-    switch (state.size) {
+    switch (state.list.size) {
       case "8":
         break;
       case "16":
@@ -21,7 +22,7 @@ const calcSum = (state) => {
   if (state.type === "pizza") {
     let ratioThin = 0;
 
-    switch (state.thin) {
+    switch (state.list.thin) {
       case "Традиционная":
         ratioThin = 0;
         break;
@@ -34,7 +35,7 @@ const calcSum = (state) => {
 
     let ratioSize = 0;
 
-    switch (state.size) {
+    switch (state.list.size) {
       case "20 см":
         break;
       case "28 см":
@@ -57,20 +58,25 @@ export const ProductOptions = createSlice({
   reducers: {
     setOptions: (state, actions) => {
       for (let i in actions.payload) {
-        state[i] = actions.payload[i];
+        state.list[i] = actions.payload[i];
       }
 
       calcSum(state);
     },
 
+    setOptionsProd: (state, actions) => {
+      for (let i in actions.payload) {
+        state[i] = actions.payload[i];
+      }
+    },
+
     resetOptions: (state) => {
-      state.id = null;
       state.sum = 0;
     }
   },
 });
 
-export const { setOptions, resetOptions } =
+export const { setOptions, resetOptions, setOptionsProd } =
   ProductOptions.actions;
 
 export default ProductOptions.reducer;

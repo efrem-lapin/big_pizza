@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../../store/slices/cartSlice";
 import { resetExtras } from "../../store/slices/extrasProdSlice";
 import { resetIngredients } from "../../store/slices/ingredientsProdSlice";
-import { resetOptions } from "../../store/slices/prodOptionsSlice";
+import { resetOptions, calcSum } from "../../store/slices/prodOptionsSlice";
 
 import "./ProductModalFooter.scss";
 
@@ -12,9 +12,8 @@ const ProductModalFooter = ({item, close}) => {
   const extras = useSelector(state => state.extrasProd.list);
   const extrasSum = useSelector(state => state.extrasProd.sum);
   const ingredients = useSelector(state => state.ingredientsProd.list) || null;
-  const options = useSelector(state => state.prodOptions.list);
+  const options = useSelector(state => state.prodOptions);
   const optionsSum = useSelector((state) => state.prodOptions.sum);
-  
 
   const sum = extrasSum + optionsSum;
 

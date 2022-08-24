@@ -5,7 +5,7 @@ import ProductModalFooter from "../ProductModalFooter/ProductModalFooter";
 import ProductModalHeader from "../ProductModalHeader/ProductModalHeader";
 import ProductModalLeft from "../ProductModalLeft/ProductModalLeft";
 import PizzaOptions from "../PizzaModal/PizzaModal";
-import { calcSum, setOptions } from "../../store/slices/prodOptionsSlice";
+import { calcSum, setOptions, setOptionsProd } from "../../store/slices/prodOptionsSlice";
 import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 
@@ -20,11 +20,12 @@ const ProductModal = ({ item, close }) => {
   const productOptions = useSelector((state) => state.prodOptions);
   const wrapRef = React.useRef();
 
-  React.useEffect(() => {
-    const prod = { id: item.id, price: item.price, name: item.name, descr: item.descr };
-    dispatch(setOptions(item)); // добавляем в опции основной id товара
-    // dispatch(calcSum(orderProduct));     // высчитываем сумму товара и опций
-  }, []);
+  // React.useEffect(() => {
+  //   const prod = { id: item.id, price: item.price, name: item.name, descr: item.descr };
+    dispatch(setOptionsProd({type: item.type}));
+    dispatch(setOptionsProd({price: item.price}));
+  //   // dispatch(calcSum(orderProduct));     // высчитываем сумму товара и опций
+  // }, []);
 
   function addProductCart() {
     // ДОБАЛЯЕМ СОБРАННЫЙ ПРОДУКТ

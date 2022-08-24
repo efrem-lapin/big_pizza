@@ -2,11 +2,10 @@
 @import "../../scss/vars.scss";
 @import "../../scss/desctop.scss";
 
-
 .cart_item {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 16px;
   border: 1px solid #f0f0f0;
@@ -29,29 +28,22 @@
 }
 
 .ex_list {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  background-color: $primary-light;
-  padding: 4px;
 }
 
 .ex_item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  
 
-  &:not(:last-child) {
-    margin-right: 4px;
+  .icon {
+    width: 18px;
+    height: 18px;
   }
 
-  svg {
-    width: 24px;
-    height: 24px;
+  .icon {
+    transform: rotate(45deg) translateY(3px);
+  }
+
+  path {
+    fill: $green;
   }
 }
 
@@ -72,6 +64,7 @@
 }
 
 .cart_item_info {
+  width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -120,10 +113,11 @@
 
 .cart_item_amount {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   transition-duration: 0.3s;
-  
+  width: 100%;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -170,4 +164,25 @@
 
 .dflex {
   display: flex;
+}
+
+.ing_item {
+  display: flex;
+  text-decoration: line-through;
+  font-size: 16px;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  path {
+    fill: $red;
+  }
+}
+
+.cart_opt {
+  &:not(:last-child)::after {
+    content: ", ";
+  }
 }

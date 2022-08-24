@@ -3,7 +3,7 @@ import {
   addProdCount,
   removeProdCount,
   removeProduct,
-  recount
+  recount,
 } from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import IngredientsIcons from "../../services/IngredientsIcons";
@@ -16,29 +16,46 @@ const CartItem = ({ item }) => {
   const Icons = new IngredientsIcons();
 
   function addCount(id) {
-    dispatch(recount({id, increment: true}));
+    dispatch(recount({ id, increment: true }));
   }
 
   function removeCount(id) {
-    dispatch(recount({id}));
+    dispatch(recount({ id }));
   }
+
+  const opts = Object.values(item.product.options.list);
 
   return (
     <li className="cart_item">
-      {item.product.extras ? (
-        <div className="ex_list">
-          {item.product.extras.map((ex) => (
-            <div className="ex_item" key={ex.id}>{Icons.getIcon(ex.icon)}</div>
-          ))}
-        </div>
-        
-      ) : null}
       <img className="cart_item_img" src={item.product.img} alt="cart_img" />
       <div className="cart_item_info">
         <div className="cart_item_text">
           <h3 className="cart_item_title">{item.product.name}</h3>
-          <p className="cart_item_options">{item.product.descr}</p>
-          {item.weigth && <div className="cart_item_weigth">{item.weigth} гр</div>}
+          <p className="cart_item_descr">{opts.map(item => <span className="cart_opt">{item}</span>)}</p>
+          {item.product.extras && (
+            <div className="ex_list">
+              {item.product.extras.map((ex) => (
+                <div className="ex_item" key={ex.id}>
+                  {<Icon name="cross"/>} {ex.title}
+                </div>
+              ))}
+            </div>
+          )}
+          {item.product.ingredients && (
+            <div className="ing_list">
+              {item.product.ingredients.map((ing) => {
+                if (ing.presence === false)
+                  return (
+                    <div className="ing_item" key={ing.id}>
+                      {<Icon name="cross" />} {ing.name}
+                    </div>
+                  );
+              })}
+            </div>
+          )}
+          {item.weigth && (
+            <div className="cart_item_weigth">{item.weigth} гр</div>
+          )}
         </div>
         <div className="cart_item_amount">
           <div className="cart_item_counter">
@@ -53,7 +70,7 @@ const CartItem = ({ item }) => {
               +
             </div>
           </div>
-          <h2 className="cart_item_sum">{item.sum || item.price} ₽</h2>
+          <h2 className="cart_item_sum">{item.product.sum || item.price} ₽</h2>
         </div>
       </div>
     </li>

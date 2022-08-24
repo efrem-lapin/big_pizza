@@ -17,7 +17,7 @@ const CartButton = ({hidden}) => {
   }
   return (
     <div className={hidden ? "cart cart_btn_none" : "cart"} onClick={openCart}>
-      {cart.length ? <div className="burger_circle">{cart.length}</div> : null}
+      {cart.length ? <div className="cart_circle">{cart.length}</div> : null}
       <Icon name="shopingBug" />
       <span className="cart_sum">{sum} ₽</span>
     </div>

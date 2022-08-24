@@ -9,14 +9,9 @@ export const ingredientsProdSlice = createSlice({
   initialState,
   reducers: {
     toggleIngredient: (state, actions) => {
-      const item = actions.payload;
-      const isAlready = state.list.some((ing) => ing.id === item.id);
-
-      if (isAlready) {
-        state.list = state.list.filter((ing) => ing.id !== item.id);
-      } else {
-        state.list.push(item);
-      }
+      const id = actions.payload;
+      const index = state.list.findIndex(ing => ing.id === id);
+      state.list[index].presence = !state.list[index].presence;
     },
 
     initIngredient: (state, actions) => {

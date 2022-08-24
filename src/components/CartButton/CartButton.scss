@@ -17,7 +17,7 @@
     &:hover {
       background-color: $primary-light;
     }
-    
+
     path {
       fill: $primary;
     }
@@ -29,5 +29,32 @@
     span {
       display: none;
     }
+  }
+}
+
+.cart_circle {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: -4px;
+  right: -4px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 30%;
+  padding: 8px 8px;
+  background-color: $red;
+  z-index: 11;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 6px 6px;
+    display: flex;
+  }
+
+  @media (max-width: 450px) {
+    border-radius: 20%;
+    font-size: 12px;
+    padding: 2px 6px;
   }
 }

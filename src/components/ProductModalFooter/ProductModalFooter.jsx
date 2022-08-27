@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../../store/slices/cartSlice";
 import { resetExtras } from "../../store/slices/extrasProdSlice";
 import { resetIngredients } from "../../store/slices/ingredientsProdSlice";
-import { resetOptions, calcSum } from "../../store/slices/prodOptionsSlice";
+import { resetOptions } from "../../store/slices/prodOptionsSlice";
 
 import "./ProductModalFooter.scss";
 
@@ -37,7 +37,7 @@ const ProductModalFooter = ({item, close}) => {
     <div className="product_footer">
       <div className="total">
         <div className="total_sum">Итого: {sum} ₽</div>
-        <div className="total_weight">{item.weigth} г</div>
+        {item.weigth && <div className="total_weight">{item.weigth} г</div>}
       </div>
       <Button text="Добавить" click={addProdCart} />
     </div>

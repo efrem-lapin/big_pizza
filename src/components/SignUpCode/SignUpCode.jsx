@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import Button from "../UI/Button";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setPhone } from "../../store/slices/signSlice";
 
-const SingUpCode = () => {
+const SignUpCode = () => {
   const [code, setCode] = useState([]);
   const [counter, setCounter] = React.useState(59);
+  const dispatch = useDispatch();
 
   const phoneNumber = useSelector(state => state.sign.phone);
+
+  function resetNumber() {
+    dispatch(setPhone({}));
+  }
 
   React.useEffect(() => {
     const timer =
@@ -73,4 +79,4 @@ const SingUpCode = () => {
   );
 };
 
-export default SingUpCode;
+export default SignUpCode;

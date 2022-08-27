@@ -45,6 +45,7 @@ const FormOrder = () => {
   ];
 
   const change = useSelector(state => state.order.change);
+  const isCash = useSelector(state => state.order.payment) === "cash";
 
   return (
     <form className="order_form">
@@ -55,7 +56,7 @@ const FormOrder = () => {
         <RadioList items={listTwo} />
       </OrderSection>
 
-      <OrderSection title="Сдача">
+     {isCash &&  <OrderSection title="Сдача">
         <div className="change_wrapper">
           <RadioList items={listThree} />
           {change === "change" && (
@@ -65,7 +66,7 @@ const FormOrder = () => {
             </div>
           )}
         </div>
-      </OrderSection>
+      </OrderSection>}
 
       <TextArea title="Комментарий" placeholder="Есть что уточнить?" />
       <OrderFooter path="/orderaccept" />

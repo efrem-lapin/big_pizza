@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import { setPhone } from "../../store/slices/signSlice";
 import { useDispatch } from "react-redux";
 
-const SingUpPhone = () => {
+const SignUpPhone = () => {
   const dispatch = useDispatch();
   const [telphone, setTelphone] = useState("");
 
@@ -42,4 +42,4 @@ const SingUpPhone = () => {
   );
 };
 
-export default SingUpPhone;
+export default SignUpPhone;

@@ -72,6 +72,7 @@ export const ProductOptions = createSlice({
 
     resetOptions: (state) => {
       state.sum = 0;
+      state.list = {};
     }
   },
 });

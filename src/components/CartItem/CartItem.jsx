@@ -31,7 +31,7 @@ const CartItem = ({ item }) => {
       <div className="cart_item_info">
         <div className="cart_item_text">
           <h3 className="cart_item_title">{item.product.name}</h3>
-          <p className="cart_item_descr">{opts.map(item => <span className="cart_opt">{item}</span>)}</p>
+          <p className="cart_item_descr">{opts.map(item => <span key={item} className="cart_opt">{item}</span>)}</p>
           {item.product.extras && (
             <div className="ex_list">
               {item.product.extras.map((ex) => (

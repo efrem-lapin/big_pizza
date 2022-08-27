@@ -18,8 +18,6 @@ const SliderProduct = ({ items = [] }) => {
     setCurrent((prev) => prev - 212);
   }
 
-  console.log(items.length)
-
   return (
     <div className="slider">
       {current ? (

@@ -2,10 +2,11 @@ import React from "react";
 import RadioList from "../RadioList/RadioList";
 import OrderFooter from "../OrderFooter/OrderFooter";
 import TextArea from "../TextArea/TextArea";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import OrderSection from "../OrderSection/OrderSection";
 import OrderCustomer from "../OrderCustomer/OrderCustomer";
 import OrderDevilery from "../OrderDevilery/OrderDevilery";
+import { setChange } from "../../store/slices/orderSlice";
 
 import "./FormOrder.scss";
 
@@ -44,6 +45,7 @@ const FormOrder = () => {
     },
   ];
 
+  const dispatch = useDispatch();
   const change = useSelector(state => state.order.change);
   const isCash = useSelector(state => state.order.payment) === "cash";
 
@@ -59,9 +61,9 @@ const FormOrder = () => {
      {isCash &&  <OrderSection title="Сдача">
         <div className="change_wrapper">
           <RadioList items={listThree} />
-          {change === "change" && (
+          {change !== "non_change" && (
             <div className="input_change_wrapper">
-              <input className="change_input" type="text" placeholder="0" />
+              <input className="change_input" type="text" placeholder="0" onChange={(e) => dispatch(setChange(e.target.value))}/>
               <span className="change_span">₽</span>
             </div>
           )}

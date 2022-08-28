@@ -1,19 +1,13 @@
 import React from "react";
-import {
-  addProdCount,
-  removeProdCount,
-  removeProduct,
-  recount,
-} from "../../store/slices/cartSlice";
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import IngredientsIcons from "../../services/IngredientsIcons";
+import { recount } from "../../store/slices/cartSlice";
+import { useDispatch } from "react-redux/es/exports";
+import Icon from "../UI/Icon";
 
 import "./CartItem.scss";
-import Icon from "../UI/Icon";
+
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const Icons = new IngredientsIcons();
 
   function addCount(id) {
     dispatch(recount({ id, increment: true }));
@@ -31,7 +25,7 @@ const CartItem = ({ item }) => {
       <div className="cart_item_info">
         <div className="cart_item_text">
           <h3 className="cart_item_title">{item.product.name}</h3>
-          <p className="cart_item_descr">{opts.map(item => <span key={item} className="cart_opt">{item}</span>)}</p>
+          {opts && <p className="cart_item_descr">{opts.map(item => <span key={item} className="cart_opt">{item}</span>)}</p>}
           {item.product.extras && (
             <div className="ex_list">
               {item.product.extras.map((ex) => (
@@ -70,7 +64,7 @@ const CartItem = ({ item }) => {
               +
             </div>
           </div>
-          <h2 className="cart_item_sum">{item.product.sum || item.price} ₽</h2>
+          <h2 className="cart_item_sum">{item.product.sum || item.product.price} ₽</h2>
         </div>
       </div>
     </li>

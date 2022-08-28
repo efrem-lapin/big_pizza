@@ -5,7 +5,6 @@ import SliderProdItem from "../SliderProdItem/SliderProdItem";
 import "./SliderProduct.scss";
 
 const SliderProduct = ({ items = [] }) => {
-  const layRef = React.useRef();
   const [current, setCurrent] = useState(0);
   const fullWidth = (items.length * 214 - 22) / 2;
   const end = current > -fullWidth;
@@ -29,7 +28,6 @@ const SliderProduct = ({ items = [] }) => {
         <div
           className="slider_inner"
           style={{ transform: `translateX(${current}px)` }}
-          ref={(ref) => (layRef.current = ref)}
         >
           {items.map((item) => (
             <SliderProdItem key={item.id} item={item} />

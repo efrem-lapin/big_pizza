@@ -3,53 +3,46 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   list: {},
   type: null,
-  sum: 0
+  ratio: 1
 };
 
-const calcSum = (state) => {
-  let sum = state.price;
+const calcRatio = (state) => {
+  let sumRatio = 1;
 
+  // SUSHI OPTIONS
   if (state.type === "sushi") {
     switch (state.list.size) {
-      case "8":
+      case "8 шт":
         break;
-      case "16":
-        sum *= 2;
+      case "16 шт":
+        sumRatio = 2;
         break;
     }
   }
  
+  // PIZZA OPTIONS
   if (state.type === "pizza") {
-    let ratioThin = 0;
-
     switch (state.list.thin) {
       case "Традиционная":
-        ratioThin = 0;
         break;
       case "Тонкая":
-        ratioThin = 0.1;
+        sumRatio += 0.1;
         break;
     }
-
-    sum -= Math.round(sum * ratioThin);
-
-    let ratioSize = 0;
 
     switch (state.list.size) {
       case "20 см":
         break;
       case "28 см":
-        ratioSize = 0.1;
+        sumRatio += 0.1;
         break;
       case "30 см":
-        ratioSize = 0.15;
+        sumRatio += 0.15;
         break;
     }
-
-    sum += Math.round(sum * ratioSize);
   }
   
-  state.sum = sum;
+  state.ratio = sumRatio;
 }
 
 export const ProductOptions = createSlice({
@@ -61,7 +54,7 @@ export const ProductOptions = createSlice({
         state.list[i] = actions.payload[i];
       }
 
-      calcSum(state);
+      calcRatio(state);
     },
 
     setOptionsProd: (state, actions) => {
@@ -71,7 +64,7 @@ export const ProductOptions = createSlice({
     },
 
     resetOptions: (state) => {
-      state.sum = 0;
+      state.ratio = 1;
       state.list = {};
     }
   },

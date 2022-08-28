@@ -4,6 +4,7 @@ import { addProduct } from "../../store/slices/cartSlice";
 import { resetExtras } from "../../store/slices/extrasProdSlice";
 import { resetIngredients } from "../../store/slices/ingredientsProdSlice";
 import { resetOptions } from "../../store/slices/prodOptionsSlice";
+import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 import "./ProductModalFooter.scss";
 
@@ -13,9 +14,9 @@ const ProductModalFooter = ({item, close}) => {
   const extrasSum = useSelector(state => state.extrasProd.sum);
   const ingredients = useSelector(state => state.ingredientsProd.list) || null;
   const options = useSelector(state => state.prodOptions);
-  const optionsSum = useSelector((state) => state.prodOptions.sum);
+  const optionsRatio = useSelector((state) => state.prodOptions.ratio);
 
-  const sum = extrasSum + optionsSum;
+  const sum = extrasSum + Math.round(item.price * optionsRatio);
 
   function addProdCart() {
     const product = {
@@ -31,6 +32,13 @@ const ProductModalFooter = ({item, close}) => {
     dispatch(resetIngredients());
     dispatch(resetOptions());
     close();
+
+    dispatch(addPopup({ id: Math.random(), text: "Товар добавлен!" }));
+
+    // УДАЛЯЕМ PUPUP ИЗ СПИСКА
+    setTimeout(() => {
+      dispatch(removePopup());
+    }, 2000);
   }
 
   return (

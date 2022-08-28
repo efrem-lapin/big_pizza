@@ -9,7 +9,8 @@ const initialState = {
     phone: '',
     mail: ''
   },
-  addres: {},
+  time: {},
+  address: {},
   speed: "fast",
   payment: "cash",
   change: "no_change",
@@ -29,10 +30,18 @@ export const orderSlice = createSlice({
 
     setCustomer: (state, actions) => {
       state.customer[actions.payload.name] = actions.payload.value;
-    }
-  },
+    },
+
+    setAdress: (state, actions) => {
+      state.address[actions.payload.name] = actions.payload.value;
+    },
+
+    setTime: (state, actions) => {
+      state.time[actions.payload.name] = actions.payload.value;
+    },
+  }
 });
 
-export const { setOptions, setCustomer } = orderSlice.actions;
+export const { setOptions, setCustomer, setAdress, setTime } = orderSlice.actions;
 
 export default orderSlice.reducer;

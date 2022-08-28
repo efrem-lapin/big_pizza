@@ -6,11 +6,11 @@ import { addPopup, removePopup } from "../../store/slices/popupSlice";
 
 import "./SliderProdItem.scss";
 
-const SliderProdItem = React.forwardRef(({ item }, ref) => {
+const SliderProdItem = ({ item }) => {
   const dispatch = useDispatch();
 
   function add() {
-    dispatch(addProduct(item));
+    dispatch(addProduct({...item, options: {list: {}}}));
     dispatch(addPopup({text: "Товар добавлен!", id: item.id + Math.random()}));
 
     setTimeout(() => {
@@ -19,7 +19,7 @@ const SliderProdItem = React.forwardRef(({ item }, ref) => {
   }
 
   return (
-    <li className="slider_item" ref={ref}>
+    <li className="slider_item" >
       <img
         src={item.img}
         alt="product"
@@ -32,6 +32,6 @@ const SliderProdItem = React.forwardRef(({ item }, ref) => {
       </div>
     </li>
   );
-});
+};
 
 export default SliderProdItem;

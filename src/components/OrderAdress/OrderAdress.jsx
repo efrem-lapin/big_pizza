@@ -1,4 +1,6 @@
 import InputList from "../InputList/InputList";
+import { useDispatch } from "react-redux";
+import { setAdress } from "../../store/slices/orderSlice";
 
 const OrderAdress = () => {
   const listInput = [
@@ -13,7 +15,7 @@ const OrderAdress = () => {
     {
       label: "Подъезд*",
       type: "text",
-      name: "house",
+      name: "entrance",
       placeholder: "1",
       id: "input3",
     },
@@ -42,23 +44,30 @@ const OrderAdress = () => {
       id: "input7",
     },
   ];
+
+  const listOne = [
+    {
+      label: "Улица*",
+      type: "text",
+      name: "street",
+      placeholder: "Пушкина",
+      id: "input1",
+    },
+  ];
+
+  const dispatch = useDispatch();
+
+  function setValue(name, value) {
+    dispatch(setAdress({name, value}));
+  }
+
   return (
     <>
       <div className="form_input_wrapper">
-        <InputList
-          items={[
-            {
-              label: "Улица*",
-              type: "text",
-              name: "street",
-              placeholder: "Пушкина",
-              id: "input1",
-            },
-          ]}
-        />
+        <InputList items={listOne} callback={setValue} />
       </div>
       <div className="form_input_wrapper">
-        <InputList items={listInput} />
+        <InputList items={listInput} callback={setValue} />
       </div>
     </>
   );

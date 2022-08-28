@@ -23,7 +23,7 @@ const OrderDevilery = () => {
     },
   ];
 
-  const prodOptions = [
+  const devs = [
     {
       id: "devi",
       name: "devilery",
@@ -42,7 +42,7 @@ const OrderDevilery = () => {
     <div className="order_section">
       <div className="order_section_head">
         <h2 className="form_title">Доставка</h2>
-        <OrderOptions options={prodOptions} />
+        <OrderOptions options={devs} />
       </div>
       {devilery === "Доставка" ? <OrderAdress /> : <RestaurantList />}
       <div className="form_radio_wrapper">

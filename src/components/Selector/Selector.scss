@@ -14,10 +14,6 @@
   border-radius: 6px;
   cursor: pointer;
 
-  span {
-    color: $gray-text;
-  }
-
   input {
     display: none;
   }
@@ -33,6 +29,10 @@
   }
 }
 
+.selector_text {
+  color: $gray-text;
+}
+
 ::-webkit-calendar-picker-indicator {
   width: 100%;
   cursor: pointer;
@@ -41,4 +41,8 @@
     content: "Дата";
     display: block;
   }
+}
+
+.select {
+  color: $black;
 }

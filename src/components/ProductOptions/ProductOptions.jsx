@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useRef } from "react";
 import { setOptions } from "../../store/slices/prodOptionsSlice";
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import { setProd, calcSum } from "../../store/slices/prodOptionsSlice";
+import { useDispatch } from "react-redux/es/exports";
 
 import "./ProductOptions.scss";
 

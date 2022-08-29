@@ -12,6 +12,7 @@ import popupSlice from "./slices/popupSlice";
 import orderSlice from "./slices/orderSlice";
 import extrasProdSlice from "./slices/extrasProdSlice";
 import ingredientsProdSlice from "./slices/ingredientsProdSlice";
+import citySlice from "./slices/citySlice";
 
 export default configureStore({
   reducer: {
@@ -27,6 +28,7 @@ export default configureStore({
     popup: popupSlice,
     order: orderSlice,
     extrasProd: extrasProdSlice,
-    ingredientsProd: ingredientsProdSlice
+    ingredientsProd: ingredientsProdSlice,
+    city: citySlice
   },
 });

@@ -43,9 +43,13 @@ export const orderSlice = createSlice({
     setChange: (state, actions) => {
       state.change = actions.payload;
     },
+
+    setRestaurant: (state, actions) => {
+      state.restaurant = actions.payload;
+    }
   }
 });
 
-export const { setOptions, setCustomer, setAdress, setTime, setChange } = orderSlice.actions;
+export const { setOptions, setCustomer, setAdress, setTime, setChange, setRestaurant } = orderSlice.actions;
 
 export default orderSlice.reducer;

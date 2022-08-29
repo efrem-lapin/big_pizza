@@ -3,6 +3,9 @@
 @import "../../scss/desctop.scss";
 
 .product_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   width: 300px;
   background: $white;
@@ -12,6 +15,7 @@
   border: 1px solid transparent;
   cursor: pointer;
   transition: 0.3s;
+  min-height: 488px;
 
   &:hover {
     border: 1px solid $gray-line;
@@ -24,8 +28,11 @@
 
   @media (max-width: 768px) {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
+    min-height: auto;
     height: 160px;
     padding: 8px;
   }
@@ -113,6 +120,11 @@
 .product_title {
   @extend %desc-sub-title;
   margin-bottom: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 
   @media (max-width: 768px) {
     font-weight: 700;
@@ -128,6 +140,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  min-height: 44px;
 
   @extend %desc-normal;
 

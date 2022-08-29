@@ -34,9 +34,10 @@ const FormOrder = () => {
       id: "change1",
       name: "change",
       label: "Без сдачи",
-      value: "non_change",
+      value: "no_change",
       checked: true,
     },
+    
     {
       id: "change2",
       name: "change",
@@ -61,7 +62,7 @@ const FormOrder = () => {
      {isCash &&  <OrderSection title="Сдача">
         <div className="change_wrapper">
           <RadioList items={listThree} />
-          {change !== "non_change" && (
+          {change !== "no_change" && (
             <div className="input_change_wrapper">
               <input className="change_input" type="text" placeholder="0" onChange={(e) => dispatch(setChange(e.target.value))}/>
               <span className="change_span">₽</span>

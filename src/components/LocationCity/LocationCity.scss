@@ -28,3 +28,22 @@
 .location_city_title {
   margin-right: 8px;
 }
+
+.location_city_list {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  z-index: 9;
+}
+
+.location_city_item {
+  padding: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}

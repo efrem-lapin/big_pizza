@@ -3,13 +3,10 @@ import React from "react";
 import "./CityList.scss";
 
 const CityList = () => {
+  const cities = ['Москва', 'Санк-Петербург', 'Екатеренбург', 'Нижний Новгород']
   return (
     <ul className="city_list">
-      <li className="city_list_item">Москва</li>
-      <li className="city_list_item">Санк-Петербург</li>
-      <li className="city_list_item">Екатеренбург</li>
-      <li className="city_list_item">Великий Новгород</li>
-      <li className="city_list_item">Воронеж</li>
+      {cities.map(city => <li className="city_list_item" key={city}>{city}</li>)}
     </ul>
   );
 };

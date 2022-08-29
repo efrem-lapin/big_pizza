@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import Icon from "../UI/Icon";
 import DropList from "../DropList/DropList";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setCity } from "../../store/slices/citySlice";
+import { setRestaurant } from "../../store/slices/orderSlice";
 
 import "./LocationCity.scss";
 
 const LocationCity = () => {
+  const dispatch = useDispatch();
   const [dropList, setDropList] = useState(false);
-  const isScrollHeader = useSelector(
-    (state) => state.scrollHeader.isScrollHeader
-  );
+  const isScrollHeader = useSelector((state) => state.scrollHeader.isScrollHeader);
+  const currCity = useSelector(state => state.city.city);
 
   React.useEffect(() => {
-    if(isScrollHeader) {
+    if (isScrollHeader) {
       setDropList(false);
     }
   }, [isScrollHeader]);
@@ -23,6 +25,12 @@ const LocationCity = () => {
   }
 
   function closeDrop(e) {
+    setDropList(false);
+  }
+
+  function selectCity(city) {
+    dispatch(setCity(city));
+    dispatch(setRestaurant(''));
     setDropList(false);
   }
 
@@ -39,10 +47,22 @@ const LocationCity = () => {
     <div className="location_city_wrapper">
       <div className="location_city" onClick={toggleCityList}>
         <Icon name="location" />
-        <span className="location_city_title">{cityList[0].name}</span>
+        <span className="location_city_title">{currCity}</span>
         <Icon name="arrow" />
       </div>
-      {dropList && !isScrollHeader && <DropList list={cityList} close={closeDrop} />}
+      {dropList && !isScrollHeader && (
+        <ul className="location_city_list">
+          {cityList.map((city) => (
+            <li
+              className="location_city_item"
+              key={city.id}
+              onClick={() => selectCity(city.name)}
+            >
+              {city.name}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

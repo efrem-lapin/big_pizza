@@ -16,13 +16,13 @@ const ProductModal = ({ item, close }) => {
 
   return (
     <>
-      <ProductModalLeft label={item.label} img={item.img} />
+      <ProductModalLeft label={item.label} img={item.image} />
 
       <div className="product_right">
         <ProductModalHeader
           labelFire={item.label && item.label.toUpperCase() === "ХИТ"}
-          title={item.name}
-          descr={item.descr}
+          title={item.title}
+          descr={item.description}
         />
 
         {/* В ЗАВИСИМОСТИ ОТ ТИПА ПРОДУКТА ВЫВОДИМ ОПЦИИ */}

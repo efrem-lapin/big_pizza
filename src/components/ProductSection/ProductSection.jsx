@@ -15,14 +15,13 @@ const ProductSection = ({ title, path, id, filter }) => {
   const filterList = useSelector((state) => state.filter.list);
 
   useEffect(() => {
-    fetch(`https://629b092bcf163ceb8d12c45b.mockapi.io/${path}`)
-      .then((res) => res.json())
+    fetch(`${process.env.REACT_APP_API_URL}+${path}`)
+      .then(data => data.json())
       .then((data) => {
         if (path === "pizza") {
           return data.filter((item) => filterList.every((keyword) => item.keywords.includes(keyword)))
         } else return data;
-      }
-      )
+      })
       .then((filtredData) => setItems(filtredData))
       .catch((err) => console.log("ERROR", err));
   }, [isFilter]);

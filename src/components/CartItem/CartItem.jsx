@@ -21,10 +21,10 @@ const CartItem = ({ item }) => {
 
   return (
     <li className="cart_item">
-      <img className="cart_item_img" src={item.product.img} alt="cart_img" />
+      <img className="cart_item_img" src={item.product.image} alt="cart_img" />
       <div className="cart_item_info">
         <div className="cart_item_text">
-          <h3 className="cart_item_title">{item.product.name}</h3>
+          <h3 className="cart_item_title">{item.product.title}</h3>
           {opts && <p className="cart_item_descr">{opts.map(item => <span key={item} className="cart_opt">{item}</span>)}</p>}
           {item.product.extras && (
             <div className="ex_list">

@@ -2,21 +2,43 @@
 
 .slider_item {
   background-color: $white;
-  width: 192px;
+  width: 235px;
   height: 100%;
 
   &:not(:last-child) {
-    margin-right: 22px;
+    margin-right: 23px;
   }
 
   .button {
-    padding: 10px 56px;
+    padding: 10px;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      padding: 5px;
+    }
 
     @media (max-width: 768px) {
+      width: auto;
       padding: 6px 15px;
       background-color: $primary-30;
       color: $primary;
       font-weight: 700;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    width: 180px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 170px;
+
+    &:not(:last-child) {
+      margin-right: 18px;
     }
   }
 
@@ -31,10 +53,20 @@
 }
 
 .slider_item_img {
-  width: 192px;
-  height: 192px;
+  width: 235px;
+  height: 235px;
   margin-bottom: 16px;
   user-select: none;
+
+  @media (max-width: 1440px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 170px;
+    height: 170px;
+  }
 
   @media (max-width: 768px) {
     width: 80px;
@@ -55,6 +87,10 @@
 .slider_item_title {
   margin-bottom: 8px;
   height: 46px;
+
+  @media (max-width: 1024px) {
+    font-size: 1.1em;
+  }
 }
 
 .slider_item_descr {

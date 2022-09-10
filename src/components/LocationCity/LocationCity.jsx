@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Icon from "../UI/Icon";
-import DropList from "../DropList/DropList";
 import { useSelector, useDispatch } from "react-redux";
 import { setCity } from "../../store/slices/citySlice";
 import { setRestaurant } from "../../store/slices/orderSlice";
+import LocationCityList from "../LocationCityList/LocationCityList";
 
 import "./LocationCity.scss";
 
@@ -28,21 +28,6 @@ const LocationCity = () => {
     setDropList(false);
   }
 
-  function selectCity(city) {
-    dispatch(setCity(city));
-    dispatch(setRestaurant(''));
-    setDropList(false);
-  }
-
-  const cityList = [
-    { name: "Москва", id: "city1" },
-    { name: "Санкт-Петербург", id: "city2" },
-    { name: "Екатеринбург", id: "city3" },
-    { name: "Нижний Новгород", id: "city4" },
-    { name: "Воронеж", id: "city5" },
-    { name: "Ростов", id: "city6" },
-  ];
-
   return (
     <div className="location_city_wrapper">
       <div className="location_city" onClick={toggleCityList}>
@@ -51,17 +36,7 @@ const LocationCity = () => {
         <Icon name="arrow" />
       </div>
       {dropList && !isScrollHeader && (
-        <ul className="location_city_list">
-          {cityList.map((city) => (
-            <li
-              className="location_city_item"
-              key={city.id}
-              onClick={() => selectCity(city.name)}
-            >
-              {city.name}
-            </li>
-          ))}
-        </ul>
+        <LocationCityList close={() => closeDrop(false)}/>
       )}
     </div>
   );

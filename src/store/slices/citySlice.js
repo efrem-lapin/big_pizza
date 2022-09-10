@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   city: "Москва",
-  restaurants: ["ул. Трех петухов 12/14б", "и ещё..."],
+  restaurants: ["ул. Московская, д.99", "ул. Северная, д.20"],
 };
 
 const citySlice = createSlice({
@@ -14,10 +14,10 @@ const citySlice = createSlice({
 
       switch (state.city) {
         case "Москва":
-          state.restaurants = ["ул. Трех петухов 12/14б", "и ещё..."];
+          state.restaurants = ["ул. Московская, д.99", "ул. Северная, д.20"];
           break;
         case "Санкт-Петербург":
-          state.restaurants = ["ул. Четырех петухов 13", "и ещё..."];
+          state.restaurants = ["ул. Петербургская, д.99", "ул. Южная, д.21"];
           break;
         default:
             state.restaurants = []

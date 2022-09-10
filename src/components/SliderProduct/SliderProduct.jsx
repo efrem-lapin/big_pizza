@@ -6,20 +6,38 @@ import "./SliderProduct.scss";
 
 const SliderProduct = ({ items = [] }) => {
   const [current, setCurrent] = useState(0);
-  const fullWidth = (items.length * 214 - 22) / 2;
-  const end = current > -fullWidth;
+  const start = current < 0;
+  
+  const widthWindow = window.screen.width;
+  let widthItem = 235;
+  let marginItem = 23;
+  let countWindowItem = 5;
+
+  if (widthWindow < 1441) {
+    widthItem = 180;
+    marginItem = 20;
+  }
+  
+  if (widthWindow < 1025) {
+    countWindowItem = 4;
+    widthItem = 170;
+    marginItem = 18;
+  }
+
+  const fullWidth = Math.round((widthItem + marginItem) * items.length - marginItem);
+  const end = current > -(fullWidth - (widthItem + marginItem) * countWindowItem);
 
   function movePrev() {
-    setCurrent((prev) => prev + 212);
+    setCurrent((prev) => prev + Math.round(widthItem + marginItem));
   }
 
   function moveNext() {
-    setCurrent((prev) => prev - 212);
+    setCurrent((prev) => prev - Math.round(widthItem + marginItem));
   }
 
   return (
     <div className="slider">
-      {current ? (
+      {start ? (
         <div className="slider_btn prev_btn" onClick={movePrev}>
           <Icon name="prev" />
         </div>

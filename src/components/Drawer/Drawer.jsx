@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import Icon from "../UI/Icon";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Overlay from "../Overlay/Overlay";
 import { Link } from "react-router-dom";
+import { resetFilters } from "../../store/slices/filterSlice";
 
 import "./Drawer.scss";
 
 const Drawer = ({ title, type, children, closeCallback }) => {
   const [isClose, setIsClose] = useState(false);  // Сначала срабатывает стейт, потом через время колбек
   const sum = useSelector((state) => state.cart.sum);
+  const dispatch = useDispatch();
+
+  function trigerFilter() {
+    closeCallback();
+  }
 
   const footer = {
     filter: (
       <>
-        <button className="drawer_button">Сбросить</button>
-        <button className="drawer_button done">Применить</button>
+        <button className="drawer_button" onClick={() => dispatch(resetFilters())}>Сбросить</button>
+        <button className="drawer_button done" onClick={trigerFilter}>Применить</button>
       </>
     ),
     cart: (
@@ -36,7 +42,7 @@ const Drawer = ({ title, type, children, closeCallback }) => {
     setTimeout(() => {
       closeCallback();
     }, 500);
-  }); // Тоймер для анимации
+  }); // Таймер для анимации
 
   function closeDrawer() {
     setIsClose(true);

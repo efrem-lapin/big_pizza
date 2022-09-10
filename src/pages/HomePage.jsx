@@ -1,7 +1,6 @@
 import React from "react";
 import Categories from "../components/Categories/Categories";
 import PostersList from "../components/PostersList/PostersList";
-
 import ProductSection from "../components/ProductSection/ProductSection";
 import ArticleHidden from "../components/ArticleHidden/ArticleHidden";
 import { setIsOpenFilter } from "../store/slices/filterSlice";
@@ -33,7 +32,7 @@ const HomePage = () => {
   ];
 
   const prodSectionItems = [
-    { key: "keyPizza", title: "Пицца", path: "pizza", id: "catPizza" },
+    { key: "keyPizza", title: "Пицца", path: "pizza", id: "catPizza", filter: true },
     { key: "keySushi", title: "Суши", path: "sushi", id: "catSushi" },
     { key: "keyDrinks", title: "Напитки", path: "desserts", id: "catDrinks" },
     { key: "keySnacks", title: "Закуски", path: "snacks", id: "catSnacks" },
@@ -66,7 +65,7 @@ const HomePage = () => {
         <CheckLocation/>
       </div>
       {prodSectionItems.map((item) => (
-        <ProductSection key={item.id} {...item} openFilter={openFilter} />
+        <ProductSection key={item.id} filter={item.filter} {...item} openFilter={openFilter} />
       ))}
       <ArticleHidden />
     </>

@@ -4,7 +4,6 @@ import Menu from "../Menu/Menu";
 import { useSelector } from "react-redux";
 
 import "./MenuMobile.scss";
-import CartButton from "../CartButton/CartButton";
 
 const MenuMobile = () => {
   const active = useSelector((state) => state.menuMobile.active);

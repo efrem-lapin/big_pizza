@@ -8,7 +8,7 @@ const FilterSection = ({ items, title }) => {
     <div className="filter_section">
       <div className="filter_section_title">{title}</div>
       <ul className="filter_list">
-        {items.map(item => <FilterItem title={item.title} value={item.value} name={item.name} />)}
+        {items.map(item => <FilterItem key={item.title} title={item.title} value={item.value} name={item.name} />)}
       </ul>
     </div>
   );

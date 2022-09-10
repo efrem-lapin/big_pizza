@@ -122,7 +122,7 @@ const OrderPage = () => {
     },
   ];
   return (
-    <div className="small_container">
+    <div className="container">
       <h2 className="order_title">Ваш заказ</h2>
       <div className="order_cart">
         <CartContent />

@@ -1,21 +1,15 @@
 @import "../../scss/vars.scss";
 
 .filter_item {
-    input {
-        display: none;
-    }
+    display: inline-block;
+    padding: 11px 20px;
+    background-color: $gray-line;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+}
 
-    input:checked + span {
-        background-color: $primary;
-        color: $white;
-    }
-
-    span {
-        display: inline-block;
-        padding: 11px 20px;
-        background-color: $gray-line;
-        border-radius: 6px;
-        cursor: pointer;
-        user-select: none;
-    }
+.filter_item_active {
+    background-color: $primary;
+    color: $white;
 }

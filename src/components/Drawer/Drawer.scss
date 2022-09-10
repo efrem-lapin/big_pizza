@@ -115,6 +115,18 @@
   &:hover {
     background-color: darken(#fff, 4);
   }
+
+  @media (max-width: 1440px) {
+    padding: 13px 38px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 13px 15%;
+  }
+
+  @media (max-width: 450px) {
+    padding: 13px 38px;
+  }
 }
 
 .button_cart {

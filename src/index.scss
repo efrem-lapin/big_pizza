@@ -64,7 +64,6 @@ li {
 
 input {
   border: none;
-  outline: none;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -84,7 +83,7 @@ a {
   }
 
   @media (max-width: 1024px) {
-    width: 750px;
+    width: 752px;
   }
 
   @media (max-width: 768px) {

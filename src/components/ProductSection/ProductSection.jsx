@@ -14,6 +14,8 @@ const ProductSection = ({ title, path, id, filter }) => {
   const [isFilter, setIsFilter] = useState(false);
   const filterList = useSelector((state) => state.filter.list);
 
+  console.log(`${process.env.REACT_APP_API_URL}/${path}`)
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}+${path}`)
       .then(data => data.json())

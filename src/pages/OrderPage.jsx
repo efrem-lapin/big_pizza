@@ -9,12 +9,22 @@ import PopupList from "../components/PopupList/PopupList";
 
 const OrderPage = () => {
   const sum = useSelector(state => state.cart.sum);
-  const { addition, setAddition } = React.useState([]);
+  const [addition, setAddition] = React.useState([]);
 
   React.useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/sauces`)
     .then(data => data.json())
     .then(data => setAddition(data))
+    .catch(err => console.log(err))
+
+    fetch(`${process.env.REACT_APP_API_URL}/drinks`)
+    .then(data => data.json())
+    .then(data => setAddition(prev => [...data, ...prev]))
+    .catch(err => console.log(err))
+
+    fetch(`${process.env.REACT_APP_API_URL}/snacks`)
+    .then(data => data.json())
+    .then(data => setAddition(prev => [...data, ...prev]))
     .catch(err => console.log(err))
   }, []);
 

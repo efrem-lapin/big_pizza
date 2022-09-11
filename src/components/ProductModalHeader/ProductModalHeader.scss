@@ -2,16 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
 }
 
 .product_title_wrapper {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 28px;
+  h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .product_descr_modal {

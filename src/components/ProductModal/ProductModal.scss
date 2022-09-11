@@ -6,13 +6,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 480px;
+
+  @media (max-width: 886px) {
+    width: auto;
+  }
 }
 
 .product_options {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 
   .options_list {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 }
 

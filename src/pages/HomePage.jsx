@@ -33,12 +33,12 @@ const HomePage = () => {
 
   const prodSectionItems = [
     { key: "keyPizza", title: "Пицца", path: "pizza", id: "catPizza", filter: true },
-    // { key: "keySushi", title: "Суши", path: "sushi", id: "catSushi" },
-    // { key: "keyDrinks", title: "Напитки", path: "desserts", id: "catDrinks" },
-    // { key: "keySnacks", title: "Закуски", path: "snacks", id: "catSnacks" },
-    // { key: "keyCombo", title: "Комбо", path: "snacks", id: "catCombo" },
-    // { key: "keyDeserts", title: "Десерты", path: "desserts", id: "catDiserts" },
-    // { key: "keySauce", title: "Соусы", path: "desserts", id: "catSauce" },
+    { key: "keySushi", title: "Суши", path: "sushi", id: "catSushi" },
+    { key: "keyDrinks", title: "Напитки", path: "drinks", id: "catDrinks" },
+    { key: "keySnacks", title: "Закуски", path: "snacks", id: "catSnacks" },
+    { key: "keyCombo", title: "Комбо", path: "combo", id: "catCombo" },
+    { key: "keyDeserts", title: "Десерты", path: "desserts", id: "catDiserts" },
+    { key: "keySauce", title: "Соусы", path: "sauces", id: "catSauce" },
   ];
 
   const categories = [

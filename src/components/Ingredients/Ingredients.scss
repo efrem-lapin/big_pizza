@@ -6,7 +6,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+      gap: 20px;
+  }
 }
 
 .ingredient_box {
@@ -137,9 +141,14 @@
 
 .ingredient_name {
   text-align: center;
+  width: 95px;
 
   @media (max-width: 1440px) {
     font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    width: 65px;
   }
 }
 

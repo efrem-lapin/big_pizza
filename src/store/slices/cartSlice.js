@@ -57,6 +57,11 @@ export const cartSlice = createSlice({
 
       calcSum(state);
     },
+
+    clearCart: (state) => {
+      state.list = [];
+      state.sum = 0;
+    }
   },
 });
 
@@ -64,6 +69,7 @@ export const {
   setIsCart,
   addProduct,
   removeProduct,
-  recount
+  recount,
+  clearCart
 } = cartSlice.actions;
 export default cartSlice.reducer;

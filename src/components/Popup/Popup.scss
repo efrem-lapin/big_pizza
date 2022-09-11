@@ -17,6 +17,17 @@
   &:not(:first-child) {
     margin-bottom: 6px;
   }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 260px) {
+    font-size: 12px;
+    padding: 8px 16px;
+    width: 100%;
+  }
 }
 
 @keyframes popup {

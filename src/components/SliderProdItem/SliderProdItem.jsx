@@ -21,12 +21,12 @@ const SliderProdItem = ({ item }) => {
   return (
     <li className="slider_item" >
       <img
-        src={item.img}
+        src={item.image}
         alt="product"
         className="slider_item_img"
       />
       <div className="slider_item_info">
-        <h3 className="slider_item_title">{item.name}</h3>
+        <h3 className="slider_item_title">{item.title}</h3>
         {item.width && <p className="slider_item_descr">{"Порция" + item.weigth + " гр"}</p>}
         <Button text={item.price + " ₽"} click={add}/>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/UI/Button";
 
 const OrderAccept = () => {
@@ -15,7 +16,7 @@ const OrderAccept = () => {
           Спасибо за заказ!<br />Примерное время доставки 45 минут. Статус отследить
           можно нажав на кнопку ниже
         </p>
-        <Button text="Отследить заказ" />
+        <Link to="/"><Button text="Отследить заказ" /></Link>
       </div>
     </div>
   );

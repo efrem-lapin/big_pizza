@@ -82,7 +82,7 @@
 .drawer_content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
   overflow: auto;
   overflow-x: hidden;

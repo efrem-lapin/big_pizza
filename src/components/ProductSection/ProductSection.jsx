@@ -15,7 +15,7 @@ const ProductSection = ({ title, path, id, filter }) => {
   const filterList = useSelector((state) => state.filter.list);
 
   useEffect(() => {
-    fetch(`http://localhost:4444/${path}`)
+    fetch(`${process.env.REACT_APP_API_URI}/${path}`)
       .then(data => data.json())
       .then((data) => {
         if (path === "pizza") {

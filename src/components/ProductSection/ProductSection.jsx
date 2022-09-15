@@ -26,6 +26,7 @@ const ProductSection = ({ title, path, id, filter }) => {
       .catch((err) => console.log("ERROR", err));
   }, [isFilter]);
 
+
   useEffect(() => {
     if (!items.length && !filterList.length) setLoading(true);
     else setLoading(false);

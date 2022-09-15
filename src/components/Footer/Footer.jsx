@@ -7,16 +7,15 @@ import "./Footer.scss";
 
 const Footer = () => {
   const listFirst = [
-    { title: "О компании", path: "", id: "flist1" },
-    { title: "Пользовательское соглашение", path: "", id: "flist2" },
-    { title: "Условия гарантии", path: "", id: "flist3" },
+    { title: "О компании", path: "/info", id: "flist1" },
+    { title: "Пользовательское соглашение", path: "/", id: "flist2" },
+    { title: "Условия гарантии", path: "/", id: "flist3" },
   ];
 
   const listSecond = [
-    { title: "Ресторан", path: "", id: "flist4" },
-    { title: "Контакты", path: "", id: "flist5" },
-    { title: "Поддержка", path: "", id: "flist1" },
-    { title: "Отследить заказ", path: "", id: "flist6" },
+    { title: "Ресторан", path: "/", id: "flist4" },
+    { title: "Контакты", path: "/", id: "flist5" },
+    { title: "Поддержка", path: "/", id: "flist1" },
   ];
 
   

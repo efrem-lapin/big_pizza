@@ -20,7 +20,7 @@ const FilterDrawer = ({ close }) => {
       title: "Соус",
       data: [
         { title: "Соус белый", value: "Соус белый", name: "common" },
-        { title: "Cоус красный", value: "Cоус красный", name: "common" }
+        { title: "Соус красный", value: "Соус красный", name: "common" } 
       ]
     }
   ];

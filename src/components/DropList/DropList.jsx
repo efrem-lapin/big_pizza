@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./DropList.scss";
 
@@ -31,9 +32,9 @@ const DropList = (props) => {
       {props.list.map((item) => {
         return (
           <div className="drop_list_item" key={item.id}>
-            <a className="drop_list_link" href={item.path}>
+            <Link className="drop_list_link" to={item.path}>
               {item.name}
-            </a>
+            </Link>
           </div>
         );
       })}

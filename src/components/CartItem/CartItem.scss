@@ -129,10 +129,6 @@
   user-select: none;
   overflow: hidden;
   margin-right: 20px;
-
-  @media (max-width: 450px) {
-    margin-right: 0px;
-  }
 }
 
 .cart_counter_btn {

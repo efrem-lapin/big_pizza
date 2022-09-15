@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import OrderPage from "./pages/OrderPage";
 import OrderAccept from "./pages/OrderAccept";
 import AccountPage from "./pages/AccountPage";
+import InfoPage from "./pages/InfoPage";
 import Cart from "./components/Cart/Cart";
 import PopupList from "./components/PopupList/PopupList";
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/order" element={<OrderPage />} />
         <Route path="/orderaccept" element={<OrderAccept />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/info" element={<InfoPage />} />
       </Routes>
       <Footer />
     </div>

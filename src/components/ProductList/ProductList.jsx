@@ -4,7 +4,7 @@ const ProductList = ({ items }) => {
   return (
     <ul className="product_list">
       {items.map((item) => (
-        <ProductItem key={item.id} item={item} />
+        <ProductItem key={item._id} item={item} />
       ))}
     </ul>
   );

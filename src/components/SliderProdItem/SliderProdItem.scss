@@ -55,7 +55,6 @@
 .slider_item_img {
   width: 235px;
   height: 235px;
-  margin-bottom: 16px;
   user-select: none;
 
   @media (max-width: 1440px) {
@@ -87,6 +86,7 @@
 .slider_item_title {
   margin-bottom: 8px;
   height: 46px;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     font-size: 1.1em;

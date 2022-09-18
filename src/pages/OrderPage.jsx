@@ -10,7 +10,7 @@ const OrderPage = () => {
   const [addition, setAddition] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`https://big1pizza1backend.herokuapp.com/sauces`)
+    fetch(`${process.env.REACT_APP_API_URL}/sauces`)
     .then(data => data.json())
     .then(data => setAddition(data))
     .catch(err => console.log(err))

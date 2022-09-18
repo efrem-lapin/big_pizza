@@ -279,9 +279,11 @@ a {
   animation: show 0.3s ease;
 }
 
+/* INFO PAGE */
+
 .info_page {
   margin-top: 100px;
-  margin-bottom: 25vh;
+  margin-bottom: 25%;
 }
 
 .info_page_title {
@@ -293,6 +295,8 @@ a {
   font-size: 1em;
   padding: 24px 0px;
 }
+
+/* ANIMATION */
 
 @keyframes show {
   from {

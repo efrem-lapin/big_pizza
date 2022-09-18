@@ -1,0 +1,18 @@
+[
+  {
+    "id": "post1",
+    "image": "img/posts/post1.jpg"
+  },
+  {
+    "id": "post2",
+    "image": "img/posts/post2.jpg"
+  },
+  {
+    "id": "post3",
+    "image": "img/posts/post1.jpg"
+  },
+  {
+    "id": "post4",
+    "image": "img/posts/post2.jpg"
+  }
+]

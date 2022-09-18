@@ -1,5 +1,0 @@
-class Products {
-    pizza = [
-        {}
-    ]
-}

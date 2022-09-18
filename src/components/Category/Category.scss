@@ -80,4 +80,9 @@
     width: 28px;
     height: 28px;
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 6px;
+  }
 }

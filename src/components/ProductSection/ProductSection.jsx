@@ -14,20 +14,8 @@ const ProductSection = ({ title, path, id, filter }) => {
   const [isFilter, setIsFilter] = useState(false);
   const filterList = useSelector((state) => state.filter.list);
 
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_API_URL}/${path}`)
-  //     .then(data => data.json())
-  //     .then((data) => {
-  //       if (path === "pizza") {
-  //         return data.filter((item) => filterList.every((keyword) => item.keywords.includes(keyword)))
-  //       } else return data;
-  //     })
-  //     .then((filtredData) => setItems(filtredData))
-  //     .catch((err) => console.log("ERROR", err));
-  // }, [filterList, isFilter, path]);
-
   useEffect(() => {
-    fetch(`https://big1pizza1backend.herokuapp.com/${path}`)
+    fetch(`${process.env.REACT_APP_API_URL}/${path}`)
       .then(data => data.json())
       .then((data) => {
         if (path === "pizza") {

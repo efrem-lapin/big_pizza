@@ -2,11 +2,11 @@
 @import "../../scss/vars.scss";
 @import "../../scss/desctop.scss";
 
-
 .header_upper,
 .upper_left,
 .upper_right {
   display: flex;
+  justify-content: space-around;
 }
 
 .header_upper {
@@ -19,9 +19,27 @@
 }
 
 .upper_left {
-  li {
-    margin-right: 40px;
-  }
+  align-items: center;
+  justify-content: start;
+}
+
+.upper_right {
+  align-items: center;
+  justify-content: end;
+}
+
+.upper_left_item {
+  margin-right: 40px;
+  width: fit-content;
+}
+
+.work_time {
+  width: fit-content;
+}
+
+.sign_up_panel {
+  width: min-content;
+  white-space: nowrap;
 }
 
 .work_time {

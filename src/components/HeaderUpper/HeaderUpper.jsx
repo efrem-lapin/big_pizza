@@ -38,9 +38,9 @@ const HeaderUpper = () => {
       <div className="header_inner">
         <div className={isHeaderScroll ? "header_upper d_over" : "header_upper"}>
           <ul className="upper_left">
-            <li><LocationCity /></li>
-            <li><LinkToScroll to="check_location" text="Проверить адрес"/></li>
-            <li>
+            <li className="upper_left_item"><LocationCity /></li>
+            <li className="upper_left_item"><LinkToScroll to="check_location" text="Проверить адрес"/></li>
+            <li className="upper_left_item">
               <span className="mid_time">
                 Среднее время доставки*: <span className="time">00:24:19</span>
               </span>

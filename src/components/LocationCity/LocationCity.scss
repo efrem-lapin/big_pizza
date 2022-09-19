@@ -27,6 +27,7 @@
 
 .location_city_title {
   margin-right: 8px;
+  white-space: nowrap;
 }
 
 .location_city_list {
@@ -42,6 +43,7 @@
   cursor: pointer;
   font-size: 16px;
   transition-duration: 0.3s;
+  margin-right: 0;
 
   &:hover {
     background-color: #fafafa;

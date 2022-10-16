@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import Button from "../UI/Button";
-import { useSelector, useDispatch } from "react-redux";
-import { setPhone } from "../../store/slices/signSlice";
+import { useSelector } from "react-redux";
 
 const SignUpCode = () => {
   const [code, setCode] = useState([]);
   const [counter, setCounter] = React.useState(59);
-  const dispatch = useDispatch();
 
   const phoneNumber = useSelector(state => state.sign.phone);
-
-  function resetNumber() {
-    dispatch(setPhone({}));
-  }
 
   React.useEffect(() => {
     const timer =
@@ -23,7 +17,7 @@ const SignUpCode = () => {
 
   function setDigit(event) {
     if (event.target.value.length > 0 && event.target.value !== "") {
-      const dig = event.target.value.replace(/\d [0-9]/dgi, "");
+      const dig = event.target.value.replace(/\d [0-9]/gi, "");
       if (code.length < 4) setCode((prev) => [...prev, dig]);
     } else {
       setCode((prev) => prev.slice(0, -1));
